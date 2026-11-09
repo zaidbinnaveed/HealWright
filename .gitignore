@@ -44,3 +44,6 @@ frontend/showcase-public/
 frontend/dist-showcase/
 frontend/.vercel/
 .vercel/
+
+# CI test report (scripts/ci_annotate.py)
+test-results.xml
