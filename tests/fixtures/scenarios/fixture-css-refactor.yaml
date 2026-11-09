@@ -1,0 +1,10 @@
+# Test fixture only (not part of the dev or eval set): exercises the YAML format.
+id: fixture-css-refactor
+split: dev
+class: css_refactor
+test: examples/test_cart.py::test_add_to_cart
+mutation:
+  class_map: {add_to_cart_btn: "css-9f2kq1 btn-x"}
+expected:
+  outcome: healed
+  action_id: add_to_cart

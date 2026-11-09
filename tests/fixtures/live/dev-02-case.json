@@ -1,0 +1,83 @@
+{
+ "scenario": "dev-02-id-rename",
+ "action": "click",
+ "target": {
+  "schema_version": 1,
+  "role": "button",
+  "accessible_name": "confirm order",
+  "tag": "button",
+  "text": "confirm order",
+  "attributes": {
+   "id": "confirm-order",
+   "type": "button"
+  },
+  "class_tokens": [
+   "btn",
+   "btn-primary"
+  ],
+  "ancestor_path": [
+   "div",
+   "main[main]",
+   "body",
+   "html"
+  ],
+  "neighbor_texts": [
+   "cancel order",
+   "total: $129.50",
+   "continue shopping",
+   "1 x waterproof jacket",
+   "status: pending"
+  ],
+  "bbox": {
+   "x": 144.0,
+   "y": 260.0,
+   "w": 129.2,
+   "h": 42.0
+  },
+  "viewport": [
+   1280,
+   800
+  ],
+  "in_shadow_dom": false
+ },
+ "marks": [
+  {
+   "id": 1,
+   "role": "button",
+   "name": "confirm order",
+   "text": "confirm order",
+   "offscreen": false
+  },
+  {
+   "id": 2,
+   "role": "button",
+   "name": "cancel order",
+   "text": "cancel order",
+   "offscreen": false
+  },
+  {
+   "id": 3,
+   "role": "link",
+   "name": "continue shopping",
+   "text": "continue shopping",
+   "offscreen": false
+  },
+  {
+   "id": 4,
+   "role": "link",
+   "name": "chaos wear",
+   "text": "chaos wear",
+   "offscreen": false
+  },
+  {
+   "id": 5,
+   "role": "link",
+   "name": "cart",
+   "text": "cart",
+   "offscreen": false
+  }
+ ],
+ "marks_table": "[{\"id\":1,\"role\":\"button\",\"name\":\"confirm order\",\"text\":\"confirm order\",\"offscreen\":false},{\"id\":2,\"role\":\"button\",\"name\":\"cancel order\",\"text\":\"cancel order\",\"offscreen\":false},{\"id\":3,\"role\":\"link\",\"name\":\"continue shopping\",\"text\":\"continue shopping\",\"offscreen\":false},{\"id\":4,\"role\":\"link\",\"name\":\"chaos wear\",\"text\":\"chaos wear\",\"offscreen\":false},{\"id\":5,\"role\":\"link\",\"name\":\"cart\",\"text\":\"cart\",\"offscreen\":false}]",
+ "expected_mark_id": 1,
+ "expected_name": "confirm order"
+}
