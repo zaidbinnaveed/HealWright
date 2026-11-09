@@ -1,0 +1,57 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      # PR CI never calls a VLM; replay mode makes any accidental call an error.
+      HEALWRIGHT_VLM_MODE: replay
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Install Python and dependencies
+        run: uv sync --locked
+
+      - name: Install Chromium
+        run: uv run playwright install --with-deps chromium
+
+      - name: Ruff lint
+        run: uv run ruff check .
+
+      - name: Ruff format
+        run: uv run ruff format --check .
+
+      - name: Mypy (strict)
+        run: uv run mypy src
+
+      - name: Unit and integration tests
+        run: uv run pytest -m "unit or integration" -q --run-timing
+
+      # Smoke-10 (all 8 classes, both trap types) on every PR, VLM in
+      # replay mode (no keys, no calls). Fails on any false heal or harness error.
+      - name: Benchmark smoke-10 (replay)
+        run: uv run python -m benchmark.run --system healwright --smoke --vlm-mode replay --fail-on-false-heal
+
+      - name: Upload smoke results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-10-results
+          path: benchmark/results/
