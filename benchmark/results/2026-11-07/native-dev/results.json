@@ -1,0 +1,317 @@
+{
+  "system": "native",
+  "split": "dev",
+  "vlm_mode": "replay",
+  "runs": 1,
+  "started_at": "2026-11-07T07:14:14+00:00",
+  "finished_at": "2026-11-07T07:18:34+00:00",
+  "rows": [
+    {
+      "id": "dev-01-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [],
+      "wall_s": 17.96,
+      "run": 0
+    },
+    {
+      "id": "dev-02-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [],
+      "wall_s": 18.06,
+      "run": 0
+    },
+    {
+      "id": "dev-03-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [],
+      "wall_s": 17.0,
+      "run": 0
+    },
+    {
+      "id": "dev-04-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [],
+      "wall_s": 16.96,
+      "run": 0
+    },
+    {
+      "id": "dev-05-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [],
+      "wall_s": 17.32,
+      "run": 0
+    },
+    {
+      "id": "dev-06-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [],
+      "wall_s": 18.75,
+      "run": 0
+    },
+    {
+      "id": "dev-07-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [],
+      "wall_s": 9.48,
+      "run": 0
+    },
+    {
+      "id": "dev-08-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "expected_action": "cancel_order",
+      "events": [],
+      "wall_s": 18.9,
+      "run": 0
+    },
+    {
+      "id": "dev-09-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [],
+      "wall_s": 9.51,
+      "run": 0
+    },
+    {
+      "id": "dev-10-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [],
+      "wall_s": 9.12,
+      "run": 0
+    },
+    {
+      "id": "dev-11-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [],
+      "wall_s": 17.21,
+      "run": 0
+    },
+    {
+      "id": "dev-12-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [],
+      "wall_s": 19.25,
+      "run": 0
+    },
+    {
+      "id": "dev-13-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [],
+      "wall_s": 17.18,
+      "run": 0
+    },
+    {
+      "id": "dev-14-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [],
+      "wall_s": 20.47,
+      "run": 0
+    },
+    {
+      "id": "dev-15-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [],
+      "wall_s": 11.51,
+      "run": 0
+    },
+    {
+      "id": "dev-16-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [],
+      "wall_s": 20.77,
+      "run": 0
+    }
+  ],
+  "aggregate": {
+    "scenarios": 16,
+    "outcomes": {
+      "red": 16
+    },
+    "true_heal_rate": 0.0,
+    "true_heals": 0,
+    "healable": 12,
+    "false_heals_on_traps": 0,
+    "silent_false_heal_rate": 0.0,
+    "precision_of_accepted_heals": null,
+    "tier1_share_of_heals": null,
+    "latency_ms": {
+      "tier1": {
+        "p50": null,
+        "p95": null,
+        "n": 0
+      },
+      "tier2": {
+        "p50": null,
+        "p95": null,
+        "n": 0
+      },
+      "all_heals": {
+        "p50": null,
+        "p95": null,
+        "n": 0
+      }
+    },
+    "patches": {
+      "healed_events": 0,
+      "apply_check_ok": 0,
+      "no_patch": 0,
+      "failed": 0
+    },
+    "errors": 0
+  }
+}

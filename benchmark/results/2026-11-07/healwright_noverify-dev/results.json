@@ -1,0 +1,472 @@
+{
+  "system": "healwright_noverify",
+  "split": "dev",
+  "vlm_mode": "record",
+  "runs": 1,
+  "started_at": "2026-11-07T10:19:19+00:00",
+  "finished_at": "2026-11-07T10:26:07+00:00",
+  "rows": [
+    {
+      "id": "dev-01-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 235.0,
+          "reason": "tier 1: test_id locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 18.38,
+      "run": 0
+    },
+    {
+      "id": "dev-02-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 234.0,
+          "reason": "tier 1: role locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 26.95,
+      "run": 0
+    },
+    {
+      "id": "dev-03-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 281.0,
+          "reason": "tier 1: test_id locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 32.0,
+      "run": 0
+    },
+    {
+      "id": "dev-04-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 313.0,
+          "reason": "tier 1: test_id locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 31.76,
+      "run": 0
+    },
+    {
+      "id": "dev-05-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 219.0,
+          "reason": "tier 1: test_id locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 23.52,
+      "run": 0
+    },
+    {
+      "id": "dev-06-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 250.0,
+          "reason": "tier 1: test_id locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 26.25,
+      "run": 0
+    },
+    {
+      "id": "dev-07-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 2,
+          "total_ms": 1110.0,
+          "reason": "tier 2: role locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 15.43,
+      "run": 0
+    },
+    {
+      "id": "dev-08-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "expected_action": "cancel_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 2,
+          "total_ms": 1078.0,
+          "reason": "tier 2: role locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 34.98,
+      "run": 0
+    },
+    {
+      "id": "dev-09-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "false_heal",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 296.0,
+          "reason": "tier 1: test_id locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 20.76,
+      "run": 0
+    },
+    {
+      "id": "dev-10-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "false_heal",
+      "test_passed": false,
+      "fired": [
+        "add_to_wishlist"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 281.0,
+          "reason": "tier 1: test_id locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 18.96,
+      "run": 0
+    },
+    {
+      "id": "dev-11-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 375.0,
+          "reason": "tier 1: test_id locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 36.22,
+      "run": 0
+    },
+    {
+      "id": "dev-12-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 328.0,
+          "reason": "tier 1: test_id locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 17.34,
+      "run": 0
+    },
+    {
+      "id": "dev-13-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 344.0,
+          "reason": "tier 1: test_id locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 34.41,
+      "run": 0
+    },
+    {
+      "id": "dev-14-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 172.0,
+          "reason": "tier 1: test_id locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 32.29,
+      "run": 0
+    },
+    {
+      "id": "dev-15-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 359.0,
+          "reason": "tier 1: test_id locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 14.89,
+      "run": 0
+    },
+    {
+      "id": "dev-16-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 281.0,
+          "reason": "tier 1: test_id locator; NOT verified (ablation: verify off)",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 22.07,
+      "run": 0
+    }
+  ],
+  "aggregate": {
+    "scenarios": 16,
+    "outcomes": {
+      "true_heal": 14,
+      "false_heal": 2
+    },
+    "true_heal_rate": 1.0,
+    "true_heals": 12,
+    "healable": 12,
+    "false_heals_on_traps": 2,
+    "silent_false_heal_rate": 0.125,
+    "precision_of_accepted_heals": 0.875,
+    "tier1_share_of_heals": 0.875,
+    "latency_ms": {
+      "tier1": {
+        "p50": 281.0,
+        "p95": 364.6,
+        "n": 14
+      },
+      "tier2": {
+        "p50": 1094.0,
+        "p95": 1108.4,
+        "n": 2
+      },
+      "all_heals": {
+        "p50": 288.5,
+        "p95": 1086.0,
+        "n": 16
+      }
+    },
+    "patches": {
+      "healed_events": 16,
+      "apply_check_ok": 16,
+      "no_patch": 0,
+      "failed": 0
+    },
+    "errors": 0
+  }
+}

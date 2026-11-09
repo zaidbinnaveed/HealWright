@@ -1,0 +1,469 @@
+{
+  "system": "rawhtml",
+  "split": "dev",
+  "vlm_mode": "record",
+  "runs": 1,
+  "started_at": "2026-11-07T10:38:55+00:00",
+  "finished_at": "2026-11-07T10:43:55+00:00",
+  "rows": [
+    {
+      "id": "dev-01-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 3405.8,
+          "reason": "rawhtml: model selector '#btn-add-basket-x7' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 30.14,
+      "run": 0
+    },
+    {
+      "id": "dev-02-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 371.1,
+          "reason": "rawhtml: model selector '#order-confirm-v2' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 29.07,
+      "run": 0
+    },
+    {
+      "id": "dev-03-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 495.0,
+          "reason": "rawhtml: model selector '#add-to-cart' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 28.17,
+      "run": 0
+    },
+    {
+      "id": "dev-04-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 484.8,
+          "reason": "rawhtml: model selector '#search-btn' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 26.82,
+      "run": 0
+    },
+    {
+      "id": "dev-05-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 325.7,
+          "reason": "rawhtml: model selector '#add-to-cart' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 20.96,
+      "run": 0
+    },
+    {
+      "id": "dev-06-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 326.3,
+          "reason": "rawhtml: model selector '#confirm-order' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 17.82,
+      "run": 0
+    },
+    {
+      "id": "dev-07-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 1314.0,
+          "reason": "rawhtml: model selector '#ord-act-b' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 9.47,
+      "run": 0
+    },
+    {
+      "id": "dev-08-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "expected_action": "cancel_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 1344.3,
+          "reason": "rawhtml: model selector '#ord-act-x' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 18.04,
+      "run": 0
+    },
+    {
+      "id": "dev-09-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "needs_human",
+          "tier": null,
+          "total_ms": 5212.4,
+          "reason": "rawhtml: TimeoutError: Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"#confirm-order\").first\n",
+          "patch": null
+        }
+      ],
+      "wall_s": 13.58,
+      "run": 0
+    },
+    {
+      "id": "dev-10-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "needs_human",
+          "tier": null,
+          "total_ms": 5221.4,
+          "reason": "rawhtml: TimeoutError: Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"#add-to-cart\").first\n",
+          "patch": null
+        }
+      ],
+      "wall_s": 12.94,
+      "run": 0
+    },
+    {
+      "id": "dev-11-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 3392.5,
+          "reason": "rawhtml: model selector '#add-to-cart' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 18.55,
+      "run": 0
+    },
+    {
+      "id": "dev-12-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 336.1,
+          "reason": "rawhtml: model selector '#search-btn' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 15.52,
+      "run": 0
+    },
+    {
+      "id": "dev-13-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 309.0,
+          "reason": "rawhtml: model selector '#add-to-cart' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 16.37,
+      "run": 0
+    },
+    {
+      "id": "dev-14-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 456.1,
+          "reason": "rawhtml: model selector '#search-btn' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 16.39,
+      "run": 0
+    },
+    {
+      "id": "dev-15-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 294.7,
+          "reason": "rawhtml: model selector '#add-to-cart' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 7.68,
+      "run": 0
+    },
+    {
+      "id": "dev-16-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": null,
+          "total_ms": 478.9,
+          "reason": "rawhtml: model selector '#confirm-order' used without verification",
+          "patch": "no_patch"
+        }
+      ],
+      "wall_s": 17.02,
+      "run": 0
+    }
+  ],
+  "aggregate": {
+    "scenarios": 16,
+    "outcomes": {
+      "true_heal": 14,
+      "red": 2
+    },
+    "true_heal_rate": 1.0,
+    "true_heals": 12,
+    "healable": 12,
+    "false_heals_on_traps": 0,
+    "silent_false_heal_rate": 0.0,
+    "precision_of_accepted_heals": 1.0,
+    "tier1_share_of_heals": 0.0,
+    "latency_ms": {
+      "tier1": {
+        "p50": null,
+        "p95": null,
+        "n": 0
+      },
+      "tier2": {
+        "p50": null,
+        "p95": null,
+        "n": 0
+      },
+      "all_heals": {
+        "p50": 467.5,
+        "p95": 3397.2,
+        "n": 14
+      }
+    },
+    "patches": {
+      "healed_events": 14,
+      "apply_check_ok": 0,
+      "no_patch": 14,
+      "failed": 0
+    },
+    "errors": 0
+  }
+}

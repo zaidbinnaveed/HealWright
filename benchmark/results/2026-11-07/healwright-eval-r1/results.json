@@ -1,0 +1,1428 @@
+{
+  "system": "healwright",
+  "split": "eval",
+  "vlm_mode": "record",
+  "providers": "groq",
+  "pacing": {
+    "HEALWRIGHT_VLM_MAX_RETRIES": "4",
+    "HEALWRIGHT_VLM_RETRY_AFTER_CAP_S": "60"
+  },
+  "provider_calls": {
+    "groq": {
+      "200": 7,
+      "timeout": 2,
+      "429": 5
+    }
+  },
+  "runs": 1,
+  "started_at": "2026-11-07T15:41:42+00:00",
+  "finished_at": "2026-11-07T15:57:28+00:00",
+  "rows": [
+    {
+      "id": "eval-01-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart",
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1297.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        },
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1625.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 22.42,
+      "run": 0
+    },
+    {
+      "id": "eval-02-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1406.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 16.54,
+      "run": 0
+    },
+    {
+      "id": "eval-03-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "add_to_cart",
+        "remove_from_cart"
+      ],
+      "clean": [
+        "add_to_cart",
+        "add_to_cart",
+        "remove_from_cart"
+      ],
+      "expected_action": "remove_from_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1969.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 18.2,
+      "run": 0
+    },
+    {
+      "id": "eval-04-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "clean": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "expected_action": "apply_coupon",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1718.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 17.46,
+      "run": 0
+    },
+    {
+      "id": "eval-05-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "expected_action": "create_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 3062.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 18.84,
+      "run": 0
+    },
+    {
+      "id": "eval-06-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order",
+        "cancel_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order",
+        "cancel_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 3047.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 19.79,
+      "run": 0
+    },
+    {
+      "id": "eval-07-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "expected_action": "cancel_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 2953.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 19.16,
+      "run": 0
+    },
+    {
+      "id": "eval-08-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1360.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 16.64,
+      "run": 0
+    },
+    {
+      "id": "eval-09-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_wishlist"
+      ],
+      "clean": [
+        "add_to_wishlist"
+      ],
+      "expected_action": "add_to_wishlist",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1109.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 16.25,
+      "run": 0
+    },
+    {
+      "id": "eval-10-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "remove_from_cart"
+      ],
+      "clean": [
+        "add_to_cart",
+        "remove_from_cart"
+      ],
+      "expected_action": "remove_from_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1703.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 17.56,
+      "run": 0
+    },
+    {
+      "id": "eval-11-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "save_for_later"
+      ],
+      "clean": [
+        "add_to_cart",
+        "save_for_later"
+      ],
+      "expected_action": "save_for_later",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 2,
+          "total_ms": 2531.0,
+          "reason": "tier 2: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 18.03,
+      "run": 0
+    },
+    {
+      "id": "eval-12-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "clean": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "expected_action": "apply_coupon",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1890.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 18.1,
+      "run": 0
+    },
+    {
+      "id": "eval-13-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "apply_coupon",
+        "remove_coupon"
+      ],
+      "clean": [
+        "add_to_cart",
+        "apply_coupon",
+        "remove_coupon"
+      ],
+      "expected_action": "remove_coupon",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 2265.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 18.61,
+      "run": 0
+    },
+    {
+      "id": "eval-14-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "expected_action": "create_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 2641.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 18.66,
+      "run": 0
+    },
+    {
+      "id": "eval-15-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "expected_action": "cancel_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 3031.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 20.23,
+      "run": 0
+    },
+    {
+      "id": "eval-16-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 2968.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 19.39,
+      "run": 0
+    },
+    {
+      "id": "eval-17-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "clean": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "expected_action": "apply_coupon",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1656.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 23.92,
+      "run": 0
+    },
+    {
+      "id": "eval-18-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "remove_from_cart"
+      ],
+      "clean": [
+        "add_to_cart",
+        "remove_from_cart"
+      ],
+      "expected_action": "remove_from_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1281.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 14.99,
+      "run": 0
+    },
+    {
+      "id": "eval-19-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1235.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 14.52,
+      "run": 0
+    },
+    {
+      "id": "eval-20-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_wishlist"
+      ],
+      "clean": [
+        "add_to_wishlist"
+      ],
+      "expected_action": "add_to_wishlist",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 860.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 14.1,
+      "run": 0
+    },
+    {
+      "id": "eval-21-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "save_for_later"
+      ],
+      "clean": [
+        "add_to_cart",
+        "save_for_later"
+      ],
+      "expected_action": "save_for_later",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1250.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 15.18,
+      "run": 0
+    },
+    {
+      "id": "eval-22-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "expected_action": "cancel_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 2641.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 17.37,
+      "run": 0
+    },
+    {
+      "id": "eval-23-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "expected_action": "create_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 2593.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 19.58,
+      "run": 0
+    },
+    {
+      "id": "eval-24-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_wishlist"
+      ],
+      "clean": [
+        "add_to_wishlist"
+      ],
+      "expected_action": "add_to_wishlist",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1000.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 16.66,
+      "run": 0
+    },
+    {
+      "id": "eval-25-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "remove_from_cart"
+      ],
+      "clean": [
+        "add_to_cart",
+        "remove_from_cart"
+      ],
+      "expected_action": "remove_from_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1593.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 17.8,
+      "run": 0
+    },
+    {
+      "id": "eval-26-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "save_for_later"
+      ],
+      "clean": [
+        "add_to_cart",
+        "save_for_later"
+      ],
+      "expected_action": "save_for_later",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1641.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 17.63,
+      "run": 0
+    },
+    {
+      "id": "eval-27-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "clean": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "expected_action": "apply_coupon",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1968.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 17.9,
+      "run": 0
+    },
+    {
+      "id": "eval-28-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "expected_action": "create_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 2704.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 19.03,
+      "run": 0
+    },
+    {
+      "id": "eval-29-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 3047.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 19.9,
+      "run": 0
+    },
+    {
+      "id": "eval-30-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "expected_action": "cancel_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 2984.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 19.64,
+      "run": 0
+    },
+    {
+      "id": "eval-31-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1437.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 16.42,
+      "run": 0
+    },
+    {
+      "id": "eval-32-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_wishlist"
+      ],
+      "clean": [
+        "add_to_wishlist"
+      ],
+      "expected_action": "add_to_wishlist",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1078.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 16.28,
+      "run": 0
+    },
+    {
+      "id": "eval-33-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "clean": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "expected_action": "apply_coupon",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1813.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 17.59,
+      "run": 0
+    },
+    {
+      "id": "eval-34-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "apply_coupon",
+        "remove_coupon"
+      ],
+      "clean": [
+        "add_to_cart",
+        "apply_coupon",
+        "remove_coupon"
+      ],
+      "expected_action": "remove_coupon",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 2313.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 19.04,
+      "run": 0
+    },
+    {
+      "id": "eval-35-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "remove_from_cart"
+      ],
+      "clean": [
+        "add_to_cart",
+        "remove_from_cart"
+      ],
+      "expected_action": "remove_from_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1625.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 17.26,
+      "run": 0
+    },
+    {
+      "id": "eval-36-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "save_for_later"
+      ],
+      "clean": [
+        "add_to_cart",
+        "save_for_later"
+      ],
+      "expected_action": "save_for_later",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1531.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 16.95,
+      "run": 0
+    },
+    {
+      "id": "eval-37-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "apply_coupon",
+        "remove_coupon"
+      ],
+      "clean": [
+        "add_to_cart",
+        "apply_coupon",
+        "remove_coupon"
+      ],
+      "expected_action": "remove_coupon",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 2204.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 18.72,
+      "run": 0
+    },
+    {
+      "id": "eval-38-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "clean": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "expected_action": "apply_coupon",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1859.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 9.4,
+      "run": 0
+    },
+    {
+      "id": "eval-39-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1407.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 8.6,
+      "run": 0
+    },
+    {
+      "id": "eval-40-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "expected_action": "create_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 2672.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 10.35,
+      "run": 0
+    },
+    {
+      "id": "eval-41-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 2,
+          "total_ms": 2515.0,
+          "reason": "tier 2: role locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 9.97,
+      "run": 0
+    },
+    {
+      "id": "eval-42-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "add_to_cart",
+        "remove_from_cart"
+      ],
+      "clean": [
+        "add_to_cart",
+        "add_to_cart",
+        "remove_from_cart"
+      ],
+      "expected_action": "remove_from_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 3610.0,
+          "reason": "tier 1: role locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 11.01,
+      "run": 0
+    },
+    {
+      "id": "eval-43-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "clean": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "expected_action": "apply_coupon",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1860.0,
+          "reason": "tier 1: role locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 9.46,
+      "run": 0
+    },
+    {
+      "id": "eval-44-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order",
+        "cancel_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order",
+        "cancel_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 2,
+          "total_ms": 25266.0,
+          "reason": "tier 2: role locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 33.15,
+      "run": 0
+    },
+    {
+      "id": "eval-45-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order",
+        "cancel_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order",
+        "cancel_order"
+      ],
+      "expected_action": "cancel_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 2,
+          "total_ms": 4344.0,
+          "reason": "tier 2: role locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 12.14,
+      "run": 0
+    },
+    {
+      "id": "eval-46-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart",
+        "apply_coupon"
+      ],
+      "expected_action": "apply_coupon",
+      "events": [
+        {
+          "status": "error",
+          "tier": null,
+          "total_ms": 37438.0,
+          "reason": "heal deadline of 30 s exceeded during tier2",
+          "patch": null
+        }
+      ],
+      "wall_s": 50.2,
+      "run": 0
+    },
+    {
+      "id": "eval-47-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "expected_action": "create_order",
+      "events": [
+        {
+          "status": "regression_suspected",
+          "tier": 2,
+          "total_ms": 10125.0,
+          "reason": "Tier 2: target absent from the page",
+          "patch": null
+        }
+      ],
+      "wall_s": 22.99,
+      "run": 0
+    },
+    {
+      "id": "eval-48-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "error",
+          "tier": null,
+          "total_ms": 47984.0,
+          "reason": "heal deadline of 30 s exceeded during tier2",
+          "patch": null
+        }
+      ],
+      "wall_s": 60.58,
+      "run": 0
+    },
+    {
+      "id": "eval-49-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart",
+        "add_to_cart",
+        "remove_from_cart"
+      ],
+      "expected_action": "remove_from_cart",
+      "events": [
+        {
+          "status": "regression_suspected",
+          "tier": 1,
+          "total_ms": 5078.0,
+          "reason": "no candidate reproduced the recorded effect: 'save waterproof jacket for later' (fail: missing call: DELETE /api/cart/{id} (2xx); extra state-changing call: POST /api/cart/{id}/save) | 'save merino wool socks for later' (fail: missing call: DELETE /api/cart/{id} (2xx); extra state-changing call: POS",
+          "patch": null
+        }
+      ],
+      "wall_s": 18.01,
+      "run": 0
+    },
+    {
+      "id": "eval-50-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "expected_action": "cancel_order",
+      "events": [
+        {
+          "status": "regression_suspected",
+          "tier": 1,
+          "total_ms": 7922.0,
+          "reason": "no candidate reproduced the recorded effect: 'confirm order' (fail: missing call: DELETE /api/orders/{id} (2xx); extra state-changing call: POST /api/orders/{id}/confirm) | 'continue shopping' (fail: url after: expected '/order/{id}', got '/'; missing call: DELETE /api/orders/{id} (2xx)) | 'chaos we",
+          "patch": null
+        }
+      ],
+      "wall_s": 21.33,
+      "run": 0
+    }
+  ],
+  "aggregate": {
+    "scenarios": 50,
+    "outcomes": {
+      "true_heal": 45,
+      "red": 5
+    },
+    "true_heal_rate": 1.0,
+    "true_heals": 40,
+    "healable": 40,
+    "false_heals_on_traps": 0,
+    "silent_false_heal_rate": 0.0,
+    "precision_of_accepted_heals": 1.0,
+    "tier1_share_of_heals": 0.913,
+    "latency_ms": {
+      "tier1": {
+        "p50": 1836.0,
+        "p95": 3047.0,
+        "n": 42
+      },
+      "tier2": {
+        "p50": 3437.5,
+        "p95": 22127.7,
+        "n": 4
+      },
+      "all_heals": {
+        "p50": 1875.0,
+        "p95": 3473.0,
+        "n": 46
+      }
+    },
+    "patches": {
+      "healed_events": 46,
+      "apply_check_ok": 46,
+      "no_patch": 0,
+      "failed": 0
+    },
+    "provider_failures": 0,
+    "errors": 0
+  }
+}

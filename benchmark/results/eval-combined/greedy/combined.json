@@ -1,0 +1,230 @@
+{
+  "system": "greedy",
+  "split": "eval",
+  "runs": 1,
+  "per_run": [
+    {
+      "folder": "benchmark/results/2026-11-07/greedy-eval-r1",
+      "system": "greedy",
+      "split": "eval",
+      "vlm_mode": "replay",
+      "started_at": "2026-11-07T15:00:10+00:00",
+      "aggregate": {
+        "scenarios": 49,
+        "outcomes": {
+          "true_heal": 43,
+          "false_heal": 6
+        },
+        "true_heal_rate": 1.0,
+        "true_heals": 39,
+        "healable": 39,
+        "false_heals_on_traps": 6,
+        "silent_false_heal_rate": 0.1224,
+        "precision_of_accepted_heals": 0.8776,
+        "tier1_share_of_heals": 1.0,
+        "latency_ms": {
+          "tier1": {
+            "p50": 218.0,
+            "p95": 266.0,
+            "n": 50
+          },
+          "tier2": {
+            "p50": null,
+            "p95": null,
+            "n": 0
+          },
+          "all_heals": {
+            "p50": 218.0,
+            "p95": 266.0,
+            "n": 50
+          }
+        },
+        "patches": {
+          "healed_events": 50,
+          "apply_check_ok": 50,
+          "no_patch": 0,
+          "failed": 0
+        },
+        "provider_failures": 0,
+        "errors": 1,
+        "scenarios_scored": 49,
+        "healable_scored": 39,
+        "deadline_tier2_provider_waits": 0,
+        "deadline_tier2_provider_waits_healable": 0,
+        "regression_red_declined": 0,
+        "regression_red_timeout": 0,
+        "regression_red_error": 0
+      }
+    }
+  ],
+  "summary": {
+    "true_heals": {
+      "values": [
+        39
+      ],
+      "mean": 39.0,
+      "min": 39.0,
+      "max": 39.0
+    },
+    "true_heal_rate": {
+      "values": [
+        1.0
+      ],
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "false_heals_on_traps": {
+      "values": [
+        6
+      ],
+      "mean": 6.0,
+      "min": 6.0,
+      "max": 6.0
+    },
+    "silent_false_heal_rate": {
+      "values": [
+        0.1224
+      ],
+      "mean": 0.1224,
+      "min": 0.1224,
+      "max": 0.1224
+    },
+    "precision_of_accepted_heals": {
+      "values": [
+        0.8776
+      ],
+      "mean": 0.8776,
+      "min": 0.8776,
+      "max": 0.8776
+    },
+    "tier1_share_of_heals": {
+      "values": [
+        1.0
+      ],
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "latency_ms.tier1.p50": {
+      "values": [
+        218.0
+      ],
+      "mean": 218.0,
+      "min": 218.0,
+      "max": 218.0
+    },
+    "latency_ms.tier1.p95": {
+      "values": [
+        266.0
+      ],
+      "mean": 266.0,
+      "min": 266.0,
+      "max": 266.0
+    },
+    "latency_ms.tier2.p50": {
+      "values": [
+        null
+      ],
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "latency_ms.tier2.p95": {
+      "values": [
+        null
+      ],
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "latency_ms.all_heals.p50": {
+      "values": [
+        218.0
+      ],
+      "mean": 218.0,
+      "min": 218.0,
+      "max": 218.0
+    },
+    "latency_ms.all_heals.p95": {
+      "values": [
+        266.0
+      ],
+      "mean": 266.0,
+      "min": 266.0,
+      "max": 266.0
+    },
+    "provider_failures": {
+      "values": [
+        0
+      ],
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "deadline_tier2_provider_waits": {
+      "values": [
+        0
+      ],
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "deadline_tier2_provider_waits_healable": {
+      "values": [
+        0
+      ],
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "regression_red_declined": {
+      "values": [
+        0
+      ],
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "regression_red_timeout": {
+      "values": [
+        0
+      ],
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "regression_red_error": {
+      "values": [
+        0
+      ],
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "healable_scored": {
+      "values": [
+        39
+      ],
+      "mean": 39.0,
+      "min": 39.0,
+      "max": 39.0
+    },
+    "scenarios_scored": {
+      "values": [
+        49
+      ],
+      "mean": 49.0,
+      "min": 49.0,
+      "max": 49.0
+    },
+    "errors": {
+      "values": [
+        1
+      ],
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    }
+  }
+}

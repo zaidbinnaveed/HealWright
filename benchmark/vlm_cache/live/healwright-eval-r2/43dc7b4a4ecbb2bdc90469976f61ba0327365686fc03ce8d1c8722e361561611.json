@@ -1,0 +1,1 @@
+{"provider": "groq", "model": "qwen/qwen3.8-27b", "raw": "{\"mark_id\": 1, \"confidence\": 1.0, \"reason\": \"Mark 1 is a button with accessible name 'save headlamp 300lm for later' and text 'Save for later', exactly matching the recorded element's role, name, and text.\"}"}

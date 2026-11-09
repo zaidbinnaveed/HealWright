@@ -1,0 +1,1 @@
+{"provider": "groq", "model": "qwen/qwen3.8-27b", "raw": "{\"mark_id\": 1, \"confidence\": 1.0, \"reason\": \"Mark 1 is a button with accessible name and text 'cancel order', matching the recorded element's role, name, and text exactly. It is the same control for the user.\"}"}

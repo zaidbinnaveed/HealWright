@@ -1,0 +1,381 @@
+{
+  "system": "healwright_noverify",
+  "split": "eval",
+  "runs": 3,
+  "per_run": [
+    {
+      "folder": "benchmark/results/2026-11-08/healwright_noverify-eval-r1",
+      "system": "healwright_noverify",
+      "split": "eval",
+      "vlm_mode": "record",
+      "started_at": "2026-11-08T06:56:05+00:00",
+      "aggregate": {
+        "scenarios": 50,
+        "outcomes": {
+          "true_heal": 44,
+          "false_heal": 3,
+          "red": 3
+        },
+        "true_heal_rate": 1.0,
+        "true_heals": 40,
+        "healable": 40,
+        "false_heals_on_traps": 3,
+        "silent_false_heal_rate": 0.06,
+        "precision_of_accepted_heals": 0.9362,
+        "tier1_share_of_heals": 0.9167,
+        "latency_ms": {
+          "tier1": {
+            "p50": 219.0,
+            "p95": 265.9,
+            "n": 44
+          },
+          "tier2": {
+            "p50": 320.0,
+            "p95": 397.4,
+            "n": 4
+          },
+          "all_heals": {
+            "p50": 219.0,
+            "p95": 326.9,
+            "n": 48
+          }
+        },
+        "patches": {
+          "healed_events": 48,
+          "apply_check_ok": 48,
+          "no_patch": 0,
+          "failed": 0
+        },
+        "provider_failures": 0,
+        "errors": 0,
+        "scenarios_scored": 50,
+        "healable_scored": 40,
+        "deadline_tier2_provider_waits": 0,
+        "deadline_tier2_provider_waits_healable": 0,
+        "regression_red_declined": 3,
+        "regression_red_timeout": 0,
+        "regression_red_error": 0
+      }
+    },
+    {
+      "folder": "benchmark/results/2026-11-08/healwright_noverify-eval-r2",
+      "system": "healwright_noverify",
+      "split": "eval",
+      "vlm_mode": "live",
+      "started_at": "2026-11-08T07:13:58+00:00",
+      "aggregate": {
+        "scenarios": 49,
+        "outcomes": {
+          "true_heal": 43,
+          "false_heal": 3,
+          "red": 3
+        },
+        "true_heal_rate": 1.0,
+        "true_heals": 39,
+        "healable": 39,
+        "false_heals_on_traps": 3,
+        "silent_false_heal_rate": 0.0612,
+        "precision_of_accepted_heals": 0.9348,
+        "tier1_share_of_heals": 0.9149,
+        "latency_ms": {
+          "tier1": {
+            "p50": 188.0,
+            "p95": 266.0,
+            "n": 43
+          },
+          "tier2": {
+            "p50": 1234.0,
+            "p95": 7350.9,
+            "n": 4
+          },
+          "all_heals": {
+            "p50": 203.0,
+            "p95": 1112.0,
+            "n": 47
+          }
+        },
+        "patches": {
+          "healed_events": 47,
+          "apply_check_ok": 47,
+          "no_patch": 0,
+          "failed": 0
+        },
+        "provider_failures": 0,
+        "errors": 1,
+        "scenarios_scored": 49,
+        "healable_scored": 39,
+        "deadline_tier2_provider_waits": 1,
+        "deadline_tier2_provider_waits_healable": 0,
+        "regression_red_declined": 2,
+        "regression_red_timeout": 1,
+        "regression_red_error": 0
+      }
+    },
+    {
+      "folder": "benchmark/results/2026-11-08/healwright_noverify-eval-r3",
+      "system": "healwright_noverify",
+      "split": "eval",
+      "vlm_mode": "live",
+      "started_at": "2026-11-08T07:36:08+00:00",
+      "aggregate": {
+        "scenarios": 49,
+        "outcomes": {
+          "true_heal": 43,
+          "false_heal": 3,
+          "red": 3
+        },
+        "true_heal_rate": 1.0,
+        "true_heals": 39,
+        "healable": 39,
+        "false_heals_on_traps": 3,
+        "silent_false_heal_rate": 0.0612,
+        "precision_of_accepted_heals": 0.9348,
+        "tier1_share_of_heals": 0.9149,
+        "latency_ms": {
+          "tier1": {
+            "p50": 203.0,
+            "p95": 263.5,
+            "n": 43
+          },
+          "tier2": {
+            "p50": 843.5,
+            "p95": 1663.3,
+            "n": 4
+          },
+          "all_heals": {
+            "p50": 203.0,
+            "p95": 781.0,
+            "n": 47
+          }
+        },
+        "patches": {
+          "healed_events": 47,
+          "apply_check_ok": 47,
+          "no_patch": 0,
+          "failed": 0
+        },
+        "provider_failures": 0,
+        "errors": 1,
+        "scenarios_scored": 49,
+        "healable_scored": 39,
+        "deadline_tier2_provider_waits": 1,
+        "deadline_tier2_provider_waits_healable": 0,
+        "regression_red_declined": 2,
+        "regression_red_timeout": 1,
+        "regression_red_error": 0
+      }
+    }
+  ],
+  "summary": {
+    "true_heals": {
+      "values": [
+        40,
+        39,
+        39
+      ],
+      "mean": 39.3333,
+      "min": 39.0,
+      "max": 40.0
+    },
+    "true_heal_rate": {
+      "values": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "false_heals_on_traps": {
+      "values": [
+        3,
+        3,
+        3
+      ],
+      "mean": 3.0,
+      "min": 3.0,
+      "max": 3.0
+    },
+    "silent_false_heal_rate": {
+      "values": [
+        0.06,
+        0.0612,
+        0.0612
+      ],
+      "mean": 0.0608,
+      "min": 0.06,
+      "max": 0.0612
+    },
+    "precision_of_accepted_heals": {
+      "values": [
+        0.9362,
+        0.9348,
+        0.9348
+      ],
+      "mean": 0.9353,
+      "min": 0.9348,
+      "max": 0.9362
+    },
+    "tier1_share_of_heals": {
+      "values": [
+        0.9167,
+        0.9149,
+        0.9149
+      ],
+      "mean": 0.9155,
+      "min": 0.9149,
+      "max": 0.9167
+    },
+    "latency_ms.tier1.p50": {
+      "values": [
+        219.0,
+        188.0,
+        203.0
+      ],
+      "mean": 203.3333,
+      "min": 188.0,
+      "max": 219.0
+    },
+    "latency_ms.tier1.p95": {
+      "values": [
+        265.9,
+        266.0,
+        263.5
+      ],
+      "mean": 265.1333,
+      "min": 263.5,
+      "max": 266.0
+    },
+    "latency_ms.tier2.p50": {
+      "values": [
+        320.0,
+        1234.0,
+        843.5
+      ],
+      "mean": 799.1667,
+      "min": 320.0,
+      "max": 1234.0
+    },
+    "latency_ms.tier2.p95": {
+      "values": [
+        397.4,
+        7350.9,
+        1663.3
+      ],
+      "mean": 3137.2,
+      "min": 397.4,
+      "max": 7350.9
+    },
+    "latency_ms.all_heals.p50": {
+      "values": [
+        219.0,
+        203.0,
+        203.0
+      ],
+      "mean": 208.3333,
+      "min": 203.0,
+      "max": 219.0
+    },
+    "latency_ms.all_heals.p95": {
+      "values": [
+        326.9,
+        1112.0,
+        781.0
+      ],
+      "mean": 739.9667,
+      "min": 326.9,
+      "max": 1112.0
+    },
+    "provider_failures": {
+      "values": [
+        0,
+        0,
+        0
+      ],
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "deadline_tier2_provider_waits": {
+      "values": [
+        0,
+        1,
+        1
+      ],
+      "mean": 0.6667,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "deadline_tier2_provider_waits_healable": {
+      "values": [
+        0,
+        0,
+        0
+      ],
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "regression_red_declined": {
+      "values": [
+        3,
+        2,
+        2
+      ],
+      "mean": 2.3333,
+      "min": 2.0,
+      "max": 3.0
+    },
+    "regression_red_timeout": {
+      "values": [
+        0,
+        1,
+        1
+      ],
+      "mean": 0.6667,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "regression_red_error": {
+      "values": [
+        0,
+        0,
+        0
+      ],
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "healable_scored": {
+      "values": [
+        40,
+        39,
+        39
+      ],
+      "mean": 39.3333,
+      "min": 39.0,
+      "max": 40.0
+    },
+    "scenarios_scored": {
+      "values": [
+        50,
+        49,
+        49
+      ],
+      "mean": 49.3333,
+      "min": 49.0,
+      "max": 50.0
+    },
+    "errors": {
+      "values": [
+        0,
+        1,
+        1
+      ],
+      "mean": 0.6667,
+      "min": 0.0,
+      "max": 1.0
+    }
+  }
+}

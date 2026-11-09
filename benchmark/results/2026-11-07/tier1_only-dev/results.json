@@ -1,0 +1,467 @@
+{
+  "system": "tier1_only",
+  "split": "dev",
+  "vlm_mode": "record",
+  "runs": 1,
+  "started_at": "2026-11-07T10:26:11+00:00",
+  "finished_at": "2026-11-07T10:31:56+00:00",
+  "rows": [
+    {
+      "id": "dev-01-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1188.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 26.37,
+      "run": 0
+    },
+    {
+      "id": "dev-02-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 3016.0,
+          "reason": "tier 1: role locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 30.94,
+      "run": 0
+    },
+    {
+      "id": "dev-03-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1422.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 23.93,
+      "run": 0
+    },
+    {
+      "id": "dev-04-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1640.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 24.09,
+      "run": 0
+    },
+    {
+      "id": "dev-05-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1031.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 27.57,
+      "run": 0
+    },
+    {
+      "id": "dev-06-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 3156.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 27.74,
+      "run": 0
+    },
+    {
+      "id": "dev-07-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "needs_human",
+          "tier": null,
+          "total_ms": 78.0,
+          "reason": "Tier 1 not confident (margin 0.030 < delta 0.06); Tier 2 unavailable",
+          "patch": null
+        }
+      ],
+      "wall_s": 14.97,
+      "run": 0
+    },
+    {
+      "id": "dev-08-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "expected_action": "cancel_order",
+      "events": [
+        {
+          "status": "needs_human",
+          "tier": null,
+          "total_ms": 188.0,
+          "reason": "Tier 1 not confident (margin 0.025 < delta 0.06); Tier 2 unavailable",
+          "patch": null
+        }
+      ],
+      "wall_s": 27.47,
+      "run": 0
+    },
+    {
+      "id": "dev-09-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "regression_suspected",
+          "tier": 1,
+          "total_ms": 8219.0,
+          "reason": "no candidate reproduced the recorded effect: 'cancel order' (fail: missing call: POST /api/orders/{id}/confirm (2xx); extra state-changing call: DELETE /api/orders/{id}) | 'continue shopping' (fail: url after: expected '/order/{id}', got '/'; missing call: POST /api/orders/{id}/confirm (2xx)) | 'cha",
+          "patch": null
+        }
+      ],
+      "wall_s": 22.05,
+      "run": 0
+    },
+    {
+      "id": "dev-10-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "regression_suspected",
+          "tier": 1,
+          "total_ms": 2063.0,
+          "reason": "no candidate reproduced the recorded effect: 'add to wishlist' (fail: missing call: POST /api/cart (2xx); extra state-changing call: POST /api/wishlist; modal delta: expected 1, got 0) | 'back to products' (fail: url after: expected '/product/{id}', got '/'; missing call: POST /api/cart (2xx); modal",
+          "patch": null
+        }
+      ],
+      "wall_s": 15.12,
+      "run": 0
+    },
+    {
+      "id": "dev-11-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1062.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 17.78,
+      "run": 0
+    },
+    {
+      "id": "dev-12-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1438.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 17.94,
+      "run": 0
+    },
+    {
+      "id": "dev-13-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1094.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 18.14,
+      "run": 0
+    },
+    {
+      "id": "dev-14-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1391.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 18.43,
+      "run": 0
+    },
+    {
+      "id": "dev-15-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1141.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 9.15,
+      "run": 0
+    },
+    {
+      "id": "dev-16-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 3079.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract",
+          "patch": "ok"
+        }
+      ],
+      "wall_s": 22.02,
+      "run": 0
+    }
+  ],
+  "aggregate": {
+    "scenarios": 16,
+    "outcomes": {
+      "true_heal": 12,
+      "red": 4
+    },
+    "true_heal_rate": 1.0,
+    "true_heals": 12,
+    "healable": 12,
+    "false_heals_on_traps": 0,
+    "silent_false_heal_rate": 0.0,
+    "precision_of_accepted_heals": 1.0,
+    "tier1_share_of_heals": 1.0,
+    "latency_ms": {
+      "tier1": {
+        "p50": 1406.5,
+        "p95": 3113.7,
+        "n": 12
+      },
+      "tier2": {
+        "p50": null,
+        "p95": null,
+        "n": 0
+      },
+      "all_heals": {
+        "p50": 1406.5,
+        "p95": 3113.7,
+        "n": 12
+      }
+    },
+    "patches": {
+      "healed_events": 12,
+      "apply_check_ok": 12,
+      "no_patch": 0,
+      "failed": 0
+    },
+    "errors": 0
+  }
+}

@@ -1,0 +1,436 @@
+{
+  "system": "healwright",
+  "split": "dev",
+  "vlm_mode": "replay",
+  "runs": 1,
+  "started_at": "2026-11-06T15:41:40+00:00",
+  "finished_at": "2026-11-06T15:48:39+00:00",
+  "rows": [
+    {
+      "id": "dev-01-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1109.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract"
+        }
+      ],
+      "wall_s": 23.59,
+      "run": 0
+    },
+    {
+      "id": "dev-02-id-rename",
+      "class": "id_rename",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 3313.0,
+          "reason": "tier 1: role locator; sandbox and live effects match the recorded contract"
+        }
+      ],
+      "wall_s": 30.05,
+      "run": 0
+    },
+    {
+      "id": "dev-03-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "needs_human",
+          "tier": 2,
+          "total_ms": 313.0,
+          "reason": "Tier 2 failed: all providers failed: gemini: replay cache miss; groq: replay cache miss"
+        }
+      ],
+      "wall_s": 35.23,
+      "run": 0
+    },
+    {
+      "id": "dev-04-css-refactor",
+      "class": "css_refactor",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1641.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract"
+        }
+      ],
+      "wall_s": 30.59,
+      "run": 0
+    },
+    {
+      "id": "dev-05-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1531.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract"
+        }
+      ],
+      "wall_s": 27.74,
+      "run": 0
+    },
+    {
+      "id": "dev-06-copy-drift",
+      "class": "copy_drift",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 3297.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract"
+        }
+      ],
+      "wall_s": 30.93,
+      "run": 0
+    },
+    {
+      "id": "dev-07-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "needs_human",
+          "tier": 2,
+          "total_ms": 281.0,
+          "reason": "Tier 2 failed: all providers failed: gemini: replay cache miss; groq: replay cache miss"
+        }
+      ],
+      "wall_s": 17.81,
+      "run": 0
+    },
+    {
+      "id": "dev-08-distractor",
+      "class": "distractor_trap",
+      "expected": "red_or_true_heal",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "cancel_order"
+      ],
+      "expected_action": "cancel_order",
+      "events": [
+        {
+          "status": "needs_human",
+          "tier": 2,
+          "total_ms": 359.0,
+          "reason": "Tier 2 failed: all providers failed: gemini: replay cache miss; groq: replay cache miss"
+        }
+      ],
+      "wall_s": 34.21,
+      "run": 0
+    },
+    {
+      "id": "dev-09-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [
+        "add_to_cart",
+        "create_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "regression_suspected",
+          "tier": 1,
+          "total_ms": 9078.0,
+          "reason": "no candidate reproduced the recorded effect: 'cancel order' (fail: missing call: POST /api/orders/{id}/confirm (2xx); extra state-changing call: DELETE /api/orders/{id}) | 'continue shopping' (fail: url after: expected '/order/{id}', got '/'; missing call: POST /api/orders/{id}/confirm (2xx)) | 'cha"
+        }
+      ],
+      "wall_s": 26.29,
+      "run": 0
+    },
+    {
+      "id": "dev-10-regression",
+      "class": "regression_trap",
+      "expected": "red",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "regression_suspected",
+          "tier": 1,
+          "total_ms": 2640.0,
+          "reason": "no candidate reproduced the recorded effect: 'add to wishlist' (fail: missing call: POST /api/cart (2xx); extra state-changing call: POST /api/wishlist; modal delta: expected 1, got 0) | 'back to products' (fail: url after: expected '/product/{id}', got '/'; missing call: POST /api/cart (2xx); modal"
+        }
+      ],
+      "wall_s": 19.22,
+      "run": 0
+    },
+    {
+      "id": "dev-11-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1188.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract"
+        }
+      ],
+      "wall_s": 27.76,
+      "run": 0
+    },
+    {
+      "id": "dev-12-tag-to-aria",
+      "class": "tag_to_aria",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1593.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract"
+        }
+      ],
+      "wall_s": 26.48,
+      "run": 0
+    },
+    {
+      "id": "dev-13-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "red",
+      "test_passed": false,
+      "fired": [],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "needs_human",
+          "tier": 2,
+          "total_ms": 359.0,
+          "reason": "Tier 2 failed: all providers failed: gemini: replay cache miss; groq: replay cache miss"
+        }
+      ],
+      "wall_s": 28.23,
+      "run": 0
+    },
+    {
+      "id": "dev-14-layout-move",
+      "class": "layout_move",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "search"
+      ],
+      "clean": [
+        "search"
+      ],
+      "expected_action": "search",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1703.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract"
+        }
+      ],
+      "wall_s": 24.8,
+      "run": 0
+    },
+    {
+      "id": "dev-15-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart"
+      ],
+      "clean": [
+        "add_to_cart"
+      ],
+      "expected_action": "add_to_cart",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 1328.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract"
+        }
+      ],
+      "wall_s": 11.85,
+      "run": 0
+    },
+    {
+      "id": "dev-16-i18n",
+      "class": "i18n",
+      "expected": "healed",
+      "outcome": "true_heal",
+      "test_passed": true,
+      "fired": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "clean": [
+        "add_to_cart",
+        "create_order",
+        "confirm_order"
+      ],
+      "expected_action": "confirm_order",
+      "events": [
+        {
+          "status": "healed",
+          "tier": 1,
+          "total_ms": 3141.0,
+          "reason": "tier 1: test_id locator; sandbox and live effects match the recorded contract"
+        }
+      ],
+      "wall_s": 23.71,
+      "run": 0
+    }
+  ],
+  "aggregate": {
+    "scenarios": 16,
+    "outcomes": {
+      "true_heal": 10,
+      "red": 6
+    },
+    "true_heal_rate": 0.8333,
+    "true_heals": 10,
+    "healable": 12,
+    "false_heals_on_traps": 0,
+    "silent_false_heal_rate": 0.0,
+    "precision_of_accepted_heals": 1.0,
+    "tier1_share_of_heals": 1.0,
+    "latency_ms": {
+      "tier1": {
+        "p50": 1617.0,
+        "p95": 3305.8,
+        "n": 10
+      },
+      "tier2": {
+        "p50": null,
+        "p95": null,
+        "n": 0
+      }
+    },
+    "errors": 0
+  }
+}

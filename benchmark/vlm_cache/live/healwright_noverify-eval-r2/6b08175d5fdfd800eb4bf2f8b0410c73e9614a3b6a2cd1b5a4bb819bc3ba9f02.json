@@ -1,0 +1,1 @@
+{"provider": "groq", "model": "qwen/qwen3.8-27b", "raw": "{\"mark_id\": null, \"confidence\": 1.0, \"reason\": \"The recorded element is a 'place order' button. The available marks are navigation links: 'chaos wear' (logo), 'cart', and 'shop'. None of these perform the action of placing an order.\"}"}
