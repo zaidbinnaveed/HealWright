@@ -8,8 +8,11 @@ proxy tests, pytester sessions, and examples runs with an explicit mode).
 from __future__ import annotations
 
 import os
+import sys
+from pathlib import Path
 
 os.environ.setdefault("HEALWRIGHT_MODE", "off")
+
 
 from collections.abc import Iterator
 from dataclasses import dataclass
@@ -18,6 +21,30 @@ import httpx
 import pytest
 
 from chaos_store.serve import serve_in_thread
+
+
+def _pin_playwright_browsers() -> None:
+    """Pin Playwright's browser folder before pytester changes HOME.
+
+    pytester gives every inner session a temporary HOME (and USERPROFILE). On Linux and
+    macOS, Playwright looks for its browsers under HOME, so inner sessions reported
+    "Executable doesn't exist" although the browser was installed. Windows is unaffected
+    (Playwright uses LOCALAPPDATA there), which is why this only showed up in Linux CI.
+    """
+    if os.environ.get("PLAYWRIGHT_BROWSERS_PATH"):
+        return
+    if sys.platform == "win32":
+        local = os.environ.get("LOCALAPPDATA")
+        path = Path(local) / "ms-playwright" if local else None
+    elif sys.platform == "darwin":
+        path = Path.home() / "Library" / "Caches" / "ms-playwright"
+    else:
+        path = Path(os.environ.get("XDG_CACHE_HOME") or Path.home() / ".cache") / "ms-playwright"
+    if path is not None and path.is_dir():
+        os.environ["PLAYWRIGHT_BROWSERS_PATH"] = str(path)
+
+
+_pin_playwright_browsers()
 
 
 @dataclass(frozen=True)

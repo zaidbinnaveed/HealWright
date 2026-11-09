@@ -14,22 +14,35 @@ concurrency:
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 40  # full suite (real Chromium) + smoke-10 benchmark
     env:
       # PR CI never calls a VLM; replay mode makes any accidental call an error.
       HEALWRIGHT_VLM_MODE: replay
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v10.3.3
         with:
           enable-cache: true
 
       - name: Install Python and dependencies
         run: uv sync --locked
 
-      - name: Install Chromium
+      # Browsers come from the project's own Playwright (the version locked in uv.lock),
+      # so install them after uv sync. The cache key carries that exact version; system
+      # libraries (--with-deps) are installed on every run, cache hit or not.
+      - name: Read the locked Playwright version
+        id: playwright
+        run: echo "version=$(uv run python -c 'import importlib.metadata as m; print(m.version("playwright"))')" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}
+
+      - name: Install Chromium (incl. headless shell) and its system libraries
         run: uv run playwright install --with-deps chromium
 
       - name: Ruff lint
@@ -51,7 +64,7 @@ jobs:
 
       - name: Upload smoke results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: smoke-10-results
           path: benchmark/results/
