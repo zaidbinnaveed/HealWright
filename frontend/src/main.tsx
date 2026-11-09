@@ -10,6 +10,8 @@ import { DemoPage } from "./pages/DemoPage";
 import { LandingPage } from "./pages/LandingPage";
 import { RunDetailPage } from "./pages/RunDetailPage";
 import { RunsPage } from "./pages/RunsPage";
+import { ShowcaseDemoPage } from "./pages/ShowcaseDemoPage";
+import { SHOWCASE } from "./api/client";
 
 const router = createBrowserRouter([
   { element: <SiteLayout />, children: [{ path: "/", element: <LandingPage /> }] },
@@ -20,7 +22,7 @@ const router = createBrowserRouter([
       { path: "/runs/:runId", element: <RunDetailPage /> },
       { path: "/events/:eventId", element: <HealEventPage /> },
       { path: "/benchmarks", element: <BenchmarkPage /> },
-      { path: "/demo", element: <DemoPage /> },
+      { path: "/demo", element: SHOWCASE ? <ShowcaseDemoPage /> : <DemoPage /> },
       { path: "*", element: <EmptyState title="Page not found">There is no page at this address.</EmptyState> },
     ],
   },

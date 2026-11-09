@@ -50,6 +50,21 @@ uv run uvicorn chaos_store.app:create_app --factory --host 127.0.0.1 --port 8001
 
 Pages: `/` (overview), `/runs`, `/runs/<run_id>`, `/events/<event_id>`, `/benchmarks`, `/demo`. API docs: `/api/v1/docs`.
 
+### Hosted showcase (https://healwright.vercel.app)
+
+A static build with no backend: every page reads a snapshot of real data, review actions are described instead of offered, and the live demo page plays the recorded session. To refresh and redeploy it:
+
+```bash
+uv run python scripts/fetch_fonts.py                              # once: fonts for the build output (never committed)
+uv run --with imageio-ffmpeg python scripts/build_showcase.py     # data snapshot + demo MP4 -> frontend/showcase-public/
+cd frontend && npm run build:showcase && cd ..                    # -> frontend/dist-showcase/
+uv run python scripts/make_vercel_output.py                       # -> frontend/.vercel/output (Build Output API v3)
+cd frontend && npx vercel deploy --prebuilt --prod && cd ..       # needs `npx vercel login` once
+uv run python scripts/smoke_site.py https://healwright.vercel.app # routes, themes, console, favicon, video
+```
+
+`make_vercel_output.py` replaces `vercel build`, whose builder needs symlinks that Windows refuses without Developer Mode. Scan `frontend/.vercel/output` for keys and local paths before every deploy.
+
 ## 5. Tests
 
 ```bash

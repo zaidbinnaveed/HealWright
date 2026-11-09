@@ -59,6 +59,7 @@ def mark_svg(light: tuple[str, str], dark: tuple[str, str] | None = None, *, pad
 
 LIGHT = ("#059669", "#0D9488")  # deeper on light browser chrome
 DARK = ("#34D399", "#14B8A6")  # brighter on dark browser chrome
+SITE = "healwright.vercel.app"  # the hosted showcase, shown on the social card
 
 OG_HTML = """<!doctype html><html><head><style>
 @font-face{font-family:Clash;src:url('%(fonts)s/ClashDisplay-Variable.woff2') format('woff2');font-weight:200 700}
@@ -82,7 +83,7 @@ h1 em{font-style:normal;color:#34D399}
 <h1>Self-healing tests<br>that <em>never lie.</em></h1>
 <div class="row"><div class="code"><span class="r">page.click("#checkout-btn")</span>
 <span class="g">page.get_by_role("button", name="Checkout").click()  &#10003;</span></div>
-<div class="tag">Verified heals for Playwright</div></div></div></body></html>"""
+<div class="tag">%(site)s</div></div></div></body></html>"""
 
 
 def main() -> None:
@@ -111,7 +112,7 @@ def main() -> None:
             )
             pngs[size] = page.screenshot(omit_background=size < 180)
         page.set_viewport_size({"width": 1200, "height": 630})
-        og = OG_HTML % {"fonts": FONTS.as_uri(), "bg": BG, "mark": mark_svg(DARK)}
+        og = OG_HTML % {"fonts": FONTS.as_uri(), "bg": BG, "mark": mark_svg(DARK), "site": SITE}
         og_file = FONTS.parent / "_og.html"  # a file:// page may load the file:// fonts
         og_file.write_text(og, encoding="utf-8")
         page.goto(og_file.as_uri())

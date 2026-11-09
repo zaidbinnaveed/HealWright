@@ -2,6 +2,8 @@
 
 **Self-healing Playwright selectors that never fake a pass.**
 
+**Live site:** [healwright.vercel.app](https://healwright.vercel.app): the dashboard, the benchmark and a recorded demo, built from real run data.
+
 HealWright is a pytest-playwright plugin for Python tests. When a selector breaks because of a harmless UI change (a renamed id, a CSS refactor, a reworded button, a translated page), HealWright finds the element the test meant, **proves the replacement does the same thing**, lets the test continue and writes a patch for you to review. If it cannot prove it, the original Playwright error is raised unchanged and the test stays red.
 
 ![HealWright overview](docs/screenshots/landing-light-1366.png)
@@ -39,7 +41,7 @@ flowchart TB
     end
     TP -- "CDP" --> C["Chromium, headless<br/>one browser, two contexts: test run and sandbox"]
     TP -- "read and write" --> S["Local storage<br/>baselines JSON (in git), run folders: events, cache"]
-    TP -- "Tier 2 only" --> V["Free VLM providers<br/>Groq first, then Mistral, else needs-human"]
+    TP -- "Tier 2 only" --> V["Free VLM provider<br/>Groq; Mistral optional fallback (off); else needs-human"]
     C -- "HTTP" --> CS["Chaos Store (testbed)<br/>FastAPI + Jinja; state per session; action log = truth"]
     S -- "reads events" --> HR["HTML run report and web app<br/>scores, screenshots, diffs"]
     BR["Benchmark runner<br/>50 scenarios, 6 systems, scored from the action log"] -- "results" --> HR
@@ -64,6 +66,8 @@ Measured on the **Chaos Benchmark**: a test shop with scripted UI mutations, and
 - Every HealWright heal produced a patch that passes `git apply --check` (137 of 137 healed events).
 - Known limitation: recording on green runs costs 21.3% extra suite time (median, examples suite); the target was under 10%.
 
+**Model provider.** Tier 2 uses Groq (`qwen/qwen3.8-27b` on the free tier). Mistral is an optional fallback, currently disabled: it joins the chain only when `MISTRAL_API_KEY` is set, and our account has no quota. The eval benchmark ran on Groq only (`--providers groq`).
+
 ## Quick start
 
 Requirements: Python 3.11 and [uv](https://docs.astral.sh/uv/), Git, and Node.js LTS only if you want to build the web app.
@@ -83,7 +87,7 @@ uv run healwright report <run_id>               # self-contained HTML report of 
 uv run healwright apply <event_id>              # apply a reviewed patch (source hash + git apply --check)
 ```
 
-Tier 2 is optional. Copy `.env.example` to `.env` and add a free-tier key (`GROQ_API_KEY`; optionally `MISTRAL_API_KEY` or `GEMINI_API_KEY`). Without keys, Tier 1 still heals, and the benchmark and demo run offline in **replay** mode using the recorded model replies in `benchmark/vlm_cache/`.
+Tier 2 is optional. Copy `.env.example` to `.env` and add a free Groq key (`GROQ_API_KEY`). Mistral (`MISTRAL_API_KEY`) is an optional fallback, currently disabled; Gemini is supported but not in the default chain. Without keys, Tier 1 still heals, and the benchmark and demo run offline in **replay** mode using the recorded model replies in `benchmark/vlm_cache/`.
 
 ## Web app and live demo
 

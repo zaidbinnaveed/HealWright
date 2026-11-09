@@ -3,6 +3,33 @@ import type { ApiErrorBody } from "./types";
 
 export const API = "/api/v1";
 
+/**
+ * Showcase build (`vite build --mode showcase`, the hosted site): there is no backend, so
+ * every read comes from a bundled snapshot of real data under /showcase/data/, laid out
+ * like the API (`/runs/<id>` -> `/showcase/data/runs/<id>.json`). Writes are not offered.
+ */
+export const SHOWCASE = import.meta.env.MODE === "showcase";
+
+function showcasePath(path: string): string {
+  if (path.startsWith("/showcase/")) return path;
+  const clean = path.split("?")[0] ?? path;
+  return `/showcase/data${clean}${clean.endsWith(".json") ? "" : ".json"}`;
+}
+
+async function showcaseRequest<T>(path: string, init?: RequestInit): Promise<T> {
+  if (init?.method && init.method !== "GET") {
+    throw new ApiError(405, "READ_ONLY", "This action is available in a local HealWright install.", null);
+  }
+  let res: Response;
+  try {
+    res = await fetch(showcasePath(path), { headers: { Accept: "application/json" } });
+  } catch {
+    throw new ApiError(0, "NETWORK", "The page could not load its data. Check your connection and retry.", null);
+  }
+  if (!res.ok) throw new ApiError(res.status === 404 ? 404 : res.status, "NOT_FOUND", "Not found.", null);
+  return (await res.json()) as T;
+}
+
 /** An error from the API envelope, or a network failure (code "NETWORK"). */
 export class ApiError extends Error {
   constructor(
@@ -20,6 +47,7 @@ function isEnvelope(body: unknown): body is ApiErrorBody {
 }
 
 export async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  if (SHOWCASE) return showcaseRequest<T>(path, init);
   let res: Response;
   try {
     const headers = new Headers(init?.headers);

@@ -1,5 +1,5 @@
 import { useId, useRef, useState } from "react";
-import { ApiError, postJson } from "../../api/client";
+import { ApiError, postJson, SHOWCASE } from "../../api/client";
 import type { HealEvent } from "../../api/types";
 import { TriageBadge } from "../StatusBadge";
 import { Button } from "../ui/Button";
@@ -27,7 +27,35 @@ const COPY: Record<Exclude<Pending, null>, { title: string; body: string; cta: s
   },
 };
 
+/** Hosted showcase: the review step is described, not offered (it edits files on disk). */
+function ShowcaseReview({ event }: { event: HealEvent }) {
+  const triageable = event.decision.status === "healed" || event.decision.status === "suggested";
+  return (
+    <Card as="section" className="space-y-3">
+      <div className="flex items-center justify-between">
+        <h2 className="text-sm font-semibold">Review</h2>
+        <TriageBadge status={event.triage.status} />
+      </div>
+      {triageable ? (
+        <p className="text-sm text-muted">
+          Every heal waits for a person. Reviewers accept or reject it here, then apply the patch to the test file in one
+          step: HealWright first re-checks the file and runs <code className="font-mono text-xs">git apply --check</code>.
+        </p>
+      ) : (
+        <p className="text-sm text-muted">
+          HealWright found no verified replacement, so the test stays red and nothing is offered for review.
+        </p>
+      )}
+      <p className="text-xs text-dim">Review and apply run in your own HealWright install, next to your tests.</p>
+    </Card>
+  );
+}
+
 export function TriageActions({ event, onChange }: { event: HealEvent; onChange: () => void }) {
+  return SHOWCASE ? <ShowcaseReview event={event} /> : <LocalTriage event={event} onChange={onChange} />;
+}
+
+function LocalTriage({ event, onChange }: { event: HealEvent; onChange: () => void }) {
   const [pending, setPending] = useState<Pending>(null);
   const [note, setNote] = useState(event.triage.note);
   const [busy, setBusy] = useState(false);
