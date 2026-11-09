@@ -1,0 +1,11 @@
+# Dev split: tuning and gate checks only. Never copy these texts or targets into the eval set.
+id: dev-01-id-rename
+split: dev
+class: id_rename
+test: examples/test_cart.py::test_add_to_cart
+mutation:
+  id_map: {add_to_cart_btn: btn-add-basket-x7}
+  testid_map: {add_to_cart_btn: add-basket}
+expected:
+  outcome: healed
+  action_id: add_to_cart

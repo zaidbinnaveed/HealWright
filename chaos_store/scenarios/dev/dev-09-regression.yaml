@@ -1,0 +1,10 @@
+# Dev split. The Confirm button is gone (a real regression). Any heal is a false heal.
+id: dev-09-regression
+split: dev
+class: regression_trap
+test: examples/test_orders.py::test_confirm_order
+mutation:
+  remove: [confirm_order_btn]
+expected:
+  outcome: red
+  action_id: confirm_order

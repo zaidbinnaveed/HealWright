@@ -1,0 +1,12 @@
+# Dev split: tuning and gate checks only. Utility classes keep the look; hashed tokens have no rules.
+id: dev-03-css-refactor
+split: dev
+class: css_refactor
+test: examples/test_cart.py::test_add_to_cart_by_class
+mutation:
+  class_map:
+    buy_box: "css-1x8b2c flex items-center gap-3"
+    add_to_cart_btn: "css-9f2kq1 inline-block px-3.5 py-2 rounded-md border bg-blue text-white cursor-pointer text-base"
+expected:
+  outcome: healed
+  action_id: add_to_cart

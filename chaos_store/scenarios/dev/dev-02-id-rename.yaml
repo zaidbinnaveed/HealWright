@@ -1,0 +1,11 @@
+# Dev split: tuning and gate checks only.
+id: dev-02-id-rename
+split: dev
+class: id_rename
+test: examples/test_orders.py::test_confirm_order
+mutation:
+  id_map: {confirm_order_btn: order-confirm-v2}
+  testid_map: {confirm_order_btn: null}
+expected:
+  outcome: healed
+  action_id: confirm_order

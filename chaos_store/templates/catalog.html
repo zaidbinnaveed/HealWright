@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+  {{ ui.el("catalog_title") }}
+  {{ ui.open("search_form") }}
+    {% for key in ui.region("search") %}{{ ui.el(key) }}{% endfor %}
+  {{ ui.close("search_form") }}
+  {{ ui.el("search_results") }}
+  {{ ui.open("product_grid") }}
+  {% for p in products %}
+    {% set fmt = {"pid": p.id, "name": p.name, "price": p.price} %}
+    {{ ui.open("product_card", **fmt) }}
+      {% for key in ui.region("card") %}{{ ui.el(key, **fmt) }}{% endfor %}
+    {{ ui.close("product_card", **fmt) }}
+  {% endfor %}
+  {{ ui.close("product_grid") }}
+{% endblock %}

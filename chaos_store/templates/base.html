@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} · Chaos Wear</title>
+  <link rel="stylesheet" href="/static/store.css">
+  <script src="/static/store.js"></script>
+</head>
+<body>
+  {{ ui.open("site_header") }}
+    {{ ui.el("site_brand") }}
+    {{ ui.open("site_nav") }}
+      {% for key in ui.region("nav") %}{{ ui.el(key) }}{% endfor %}
+    {{ ui.close("site_nav") }}
+  {{ ui.close("site_header") }}
+  {{ ui.open("main") }}
+    {% block content %}{% endblock %}
+  {{ ui.close("main") }}
+</body>
+</html>

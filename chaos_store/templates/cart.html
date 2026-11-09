@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+  {{ ui.el("cart_title") }}
+  {% if not state.cart %}
+    {{ ui.el("cart_empty") }}
+  {% else %}
+    {{ ui.open("cart_list") }}
+    {% for item in state.cart %}
+      {% set fmt = {"item": item.item_id, "name": item.product.name, "qty": item.qty, "line_total": money(item.line_cents)} %}
+      {{ ui.open("cart_row", **fmt) }}
+        {% for key in ui.region("cart_row") %}{{ ui.el(key, **fmt) }}{% endfor %}
+      {{ ui.close("cart_row", **fmt) }}
+    {% endfor %}
+    {{ ui.close("cart_list") }}
+    {{ ui.open("coupon_form") }}
+      {% for key in ui.region("coupon") %}{{ ui.el(key) }}{% endfor %}
+    {{ ui.close("coupon_form") }}
+    {{ ui.el("coupon_status") }}
+    {% set totals = {"subtotal": money(state.subtotal_cents), "discount": money(state.discount_cents), "total": money(state.total_cents)} %}
+    {% for key in ui.region("cart_totals") %}{{ ui.el(key, **totals) }}{% endfor %}
+    {{ ui.el("checkout_link") }}
+  {% endif %}
+{% endblock %}

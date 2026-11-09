@@ -1,0 +1,10 @@
+# Dev split: tuning and gate checks only.
+id: dev-05-copy-drift
+split: dev
+class: copy_drift
+test: examples/test_cart.py::test_add_to_cart_by_text
+mutation:
+  text_map: {add_to_cart_btn: Add to basket}
+expected:
+  outcome: healed
+  action_id: add_to_cart

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  {% set fmt = {"pid": product.id, "name": product.name, "price": product.price, "description": product.description} %}
+  {% for key in ui.region("product_info") %}{{ ui.el(key, **fmt) }}{% endfor %}
+  {{ ui.open("buy_box", **fmt) }}
+    {% for key in ui.region("buy_box") %}{{ ui.el(key, **fmt) }}{% endfor %}
+  {{ ui.close("buy_box", **fmt) }}
+  {{ ui.el("cart_status", **fmt) }}
+  {{ ui.el("back_link", **fmt) }}
+  {{ ui.open("added_modal") }}
+    {{ ui.el("added_modal_title") }}
+    {{ ui.el("added_modal_text") }}
+    {% for key in ui.region("modal_actions") %}{{ ui.el(key) }}{% endfor %}
+  {{ ui.close("added_modal") }}
+{% endblock %}

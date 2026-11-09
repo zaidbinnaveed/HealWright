@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+  {% set fmt = {"oid": order.id, "status": order.status.capitalize(), "total": money(order.total_cents)} %}
+  {{ ui.el("order_title", **fmt) }}
+  {{ ui.el("order_status", **fmt) }}
+  {{ ui.open("order_items") }}
+  {% for item in order.items %}
+    {{ ui.el("order_item", qty=item.qty, name=item.product.name) }}
+  {% endfor %}
+  {{ ui.close("order_items") }}
+  {{ ui.el("order_total", **fmt) }}
+  {{ ui.open("order_actions", **fmt) }}
+    {% for key in ui.region("order_actions") %}{{ ui.el(key, **fmt) }}{% endfor %}
+  {{ ui.close("order_actions", **fmt) }}
+  {{ ui.el("order_back_link") }}
+{% endblock %}

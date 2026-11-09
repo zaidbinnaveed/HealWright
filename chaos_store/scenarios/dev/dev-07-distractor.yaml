@@ -1,0 +1,14 @@
+# Dev split. Target renamed; the identically styled Cancel button now sits where Confirm was.
+# Correct: stay red, or heal to the TRUE Confirm button. Picking Cancel is a false heal.
+id: dev-07-distractor
+split: dev
+class: distractor_trap
+test: examples/test_orders.py::test_confirm_order
+mutation:
+  id_map: {confirm_order_btn: ord-act-b}
+  testid_map: {confirm_order_btn: null}
+  class_map: {cancel_order_btn: btn btn-primary}
+  order_map: {order_actions: [cancel_order_btn, confirm_order_btn]}
+expected:
+  outcome: red_or_true_heal
+  action_id: confirm_order

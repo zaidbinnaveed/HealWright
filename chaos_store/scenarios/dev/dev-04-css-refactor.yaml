@@ -1,0 +1,11 @@
+# Dev split: tuning and gate checks only.
+id: dev-04-css-refactor
+split: dev
+class: css_refactor
+test: examples/test_search.py::test_search_no_results
+mutation:
+  class_map:
+    search_btn: "sc-a81kd2 inline-block px-3 py-2 rounded-md border border-blue bg-white text-blue cursor-pointer text-base"
+expected:
+  outcome: healed
+  action_id: search

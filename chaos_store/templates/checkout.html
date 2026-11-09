@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+  {{ ui.el("checkout_title") }}
+  {% if not state.cart %}
+    {{ ui.el("cart_empty") }}
+  {% else %}
+    {{ ui.el("checkout_summary", total=money(state.total_cents)) }}
+    {{ ui.open("checkout_form") }}
+      {% for key in ui.region("checkout_fields") %}
+        {% if key == "shipping_select" %}
+          {{ ui.open(key) }}{{ ui.el("shipping_opt_standard") }}{{ ui.el("shipping_opt_express") }}{{ ui.close(key) }}
+        {% else %}
+          {{ ui.el(key) }}
+        {% endif %}
+      {% endfor %}
+      {% for key in ui.region("agree") %}{{ ui.el(key) }}{% endfor %}
+      {{ ui.el("place_order_btn") }}
+    {{ ui.close("checkout_form") }}
+    {{ ui.el("checkout_status") }}
+  {% endif %}
+{% endblock %}

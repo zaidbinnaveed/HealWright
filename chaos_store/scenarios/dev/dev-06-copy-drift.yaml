@@ -1,0 +1,10 @@
+# Dev split: tuning and gate checks only.
+id: dev-06-copy-drift
+split: dev
+class: copy_drift
+test: examples/test_orders.py::test_confirm_order_by_xpath
+mutation:
+  text_map: {confirm_order_btn: Confirm your order}
+expected:
+  outcome: healed
+  action_id: confirm_order

@@ -1,0 +1,10 @@
+# Dev split. The Add to cart button is gone (a real regression). Any heal is a false heal.
+id: dev-10-regression
+split: dev
+class: regression_trap
+test: examples/test_cart.py::test_add_to_cart
+mutation:
+  remove: [add_to_cart_btn]
+expected:
+  outcome: red
+  action_id: add_to_cart

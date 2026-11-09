@@ -1,0 +1,13 @@
+# Dev split. Cancel renamed; an identically styled Confirm button now sits where Cancel was.
+id: dev-08-distractor
+split: dev
+class: distractor_trap
+test: examples/test_orders.py::test_cancel_order
+mutation:
+  id_map: {cancel_order_btn: ord-act-x}
+  testid_map: {cancel_order_btn: null}
+  class_map: {confirm_order_btn: btn btn-danger}
+  order_map: {order_actions: [cancel_order_btn, confirm_order_btn]}
+expected:
+  outcome: red_or_true_heal
+  action_id: cancel_order
