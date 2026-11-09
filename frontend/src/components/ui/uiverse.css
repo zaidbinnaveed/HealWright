@@ -1,0 +1,358 @@
+.uv-toggle {
+  background-color: var(--chip);
+  border: 1px solid var(--line);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  line-height: 1;
+  color: var(--ink);
+  transition: background-color 0.2s;
+}
+.uv-toggle:hover {
+  background-color: var(--chip-hover);
+}
+.uv-toggle:has(.uv-toggle-input:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.uv-toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.uv-toggle-icon {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  transition: transform 500ms;
+}
+.uv-toggle-icon--moon {
+  transition-delay: 200ms;
+}
+.uv-toggle-icon--sun {
+  transform: scale(0);
+}
+.uv-toggle-input:checked + .uv-toggle-icon--moon {
+  transform: rotate(360deg) scale(0);
+}
+.uv-toggle-input:checked ~ .uv-toggle-icon--sun {
+  transition-delay: 200ms;
+  transform: scale(1) rotate(360deg);
+}
+
+.uv-spinner {
+  --size-of-spinner: 50px;
+  --spinner-border-width: 4px;
+  --spinner-color: var(--accent);
+  --circle-color: color-mix(in srgb, var(--accent) 14%, transparent);
+  --speed-of-animation: 2s;
+  --scale: 1.3;
+  width: var(--size-of-spinner);
+  height: var(--size-of-spinner);
+  background: var(--circle-color);
+  border-radius: 50%;
+  position: relative;
+  flex: none;
+}
+.uv-spinner::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  border: var(--spinner-border-width) solid var(--spinner-color);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: uv-spinny var(--speed-of-animation) linear infinite;
+}
+@keyframes uv-spinny {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(var(--scale));
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.uv-skel-card {
+  width: 100%;
+  background: var(--surface);
+  padding: 30px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  --skel: color-mix(in srgb, var(--ink) 12%, transparent);
+  --skel-shine: color-mix(in srgb, var(--ink) 4%, transparent);
+}
+.uv-skel-card .uv-skel-header {
+  display: flex;
+  align-items: center;
+}
+.uv-skel-card .uv-skel-img {
+  height: 45px;
+  width: 45px;
+  background: var(--skel);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.uv-skel-card .uv-skel-details {
+  margin-left: 20px;
+}
+.uv-skel-card .uv-skel-details span {
+  display: block;
+  background: var(--skel);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.uv-skel-card .uv-skel-name {
+  height: 12px;
+  width: 70px;
+}
+.uv-skel-card .uv-skel-about {
+  height: 13px;
+  width: 120px;
+  margin-top: 10px;
+}
+.uv-skel-card .uv-skel-description {
+  margin: 25px 0;
+}
+.uv-skel-card .uv-skel-line {
+  background: var(--skel);
+  border-radius: 10px;
+  height: 11px;
+  margin: 10px 0;
+  overflow: hidden;
+  position: relative;
+}
+.uv-skel-card .uv-skel-line-1 {
+  width: calc(100% - 15%);
+}
+.uv-skel-card .uv-skel-line-3 {
+  width: calc(100% - 40%);
+}
+.uv-skel-card .uv-skel-btns {
+  display: flex;
+}
+.uv-skel-card .uv-skel-btn {
+  height: 25px;
+  width: 100%;
+  background: var(--skel);
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+}
+.uv-skel-card .uv-skel-btn-1 {
+  margin-right: 8px;
+}
+.uv-skel-card .uv-skel-btn-2 {
+  margin-left: 8px;
+}
+.uv-skel-card .uv-skel-img::before,
+.uv-skel-card .uv-skel-details span::before,
+.uv-skel-card .uv-skel-line::before,
+.uv-skel-card .uv-skel-btn::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--skel-shine) 20%,
+    transparent 40%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 450px 400px;
+  animation: uv-shimmer 1s linear infinite;
+}
+.uv-skel-card .uv-skel-img::before {
+  background-size: 650px 600px;
+}
+.uv-skel-card .uv-skel-details span::before {
+  animation-delay: 0.2s;
+}
+.uv-skel-card .uv-skel-btn-2::before {
+  animation-delay: 0.22s;
+}
+@keyframes uv-shimmer {
+  0% {
+    background-position: -450px 0;
+  }
+  100% {
+    background-position: 450px 0;
+  }
+}
+
+.uv-search-container {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  isolation: isolate;
+}
+.uv-search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--chip);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.uv-search-input {
+  width: 100%;
+  border: none;
+  background: none;
+  color: var(--ink);
+  font-size: 14px;
+  padding: 6px 8px;
+  outline: none;
+}
+.uv-search-input::placeholder {
+  color: var(--dim);
+}
+.uv-search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background-color: var(--chip-hover);
+  border-radius: 50%;
+  margin-left: 8px;
+  transition: background-color 0.3s ease;
+}
+.uv-search-icon svg {
+  fill: var(--muted);
+}
+.uv-search-bar:hover {
+  box-shadow: 0 0 15px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+.uv-search-bar:focus-within {
+  border-color: var(--line-strong);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 28%, transparent);
+}
+.uv-search-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 200%;
+  border-radius: 100px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 10%, transparent), transparent);
+  transition: all 0.5s ease;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: -1;
+  pointer-events: none;
+}
+.uv-search-bar:hover + .uv-search-glow {
+  transform: translate(-50%, -50%) scale(1);
+}
+.uv-search-bar:focus-within + .uv-search-glow {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.uv-dot {
+  --background-tooltip-container: var(--status-good);
+  position: relative;
+  display: inline-block;
+  background: var(--background-tooltip-container);
+  transition: all 0.2s;
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  flex: none;
+}
+
+.uv-checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  --uv-check: var(--accent);
+}
+.uv-checkbox > input {
+  appearance: none;
+  z-index: -1;
+  position: absolute;
+  left: -10px;
+  top: -8px;
+  display: block;
+  margin: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: var(--line-strong);
+  box-shadow: none;
+  outline: none;
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+}
+.uv-checkbox > span {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
+.uv-checkbox > span::before {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 3px 8px 3px 1px;
+  border: solid 2px;
+  border-color: var(--dim);
+  border-radius: 2px;
+  width: 18px;
+  height: 18px;
+  vertical-align: top;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.uv-checkbox > span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  width: 10px;
+  height: 5px;
+  border: solid 2px transparent;
+  border-right: none;
+  border-top: none;
+  transform: translate(3px, 4px) rotate(-45deg);
+}
+.uv-checkbox > input:checked {
+  background-color: var(--uv-check);
+}
+.uv-checkbox > input:checked + span::before {
+  border-color: var(--uv-check);
+  background-color: var(--uv-check);
+}
+.uv-checkbox > input:checked + span::after {
+  border-color: var(--bg);
+}
+.uv-checkbox:hover > input {
+  opacity: 0.04;
+}
+.uv-checkbox > input:focus {
+  opacity: 0.12;
+}
+.uv-checkbox > input:focus-visible + span::before {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.uv-checkbox:hover > input:focus {
+  opacity: 0.16;
+}
+.uv-checkbox > input:active {
+  opacity: 1;
+  transform: scale(0);
+  transition: transform 0s, opacity 0s;
+}

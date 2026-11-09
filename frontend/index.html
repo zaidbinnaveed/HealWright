@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#151517" />
+    <title>HealWright: self-healing tests that never lie</title>
+    <meta name="description" content="HealWright repairs broken Playwright selectors and proves every fix before the test passes." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="HealWright" />
+    <meta property="og:title" content="HealWright: self-healing tests that never lie" />
+    <meta property="og:description" content="Repairs broken Playwright selectors and proves every fix before the test passes." />
+    <meta property="og:image" content="/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HealWright: self-healing tests that never lie" />
+    <meta name="twitter:image" content="/og.png" />
+    <script>
+      try {
+        const stored = localStorage.getItem("hw-theme");
+        const dark = stored ? stored === "dark" : true;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch (_) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
