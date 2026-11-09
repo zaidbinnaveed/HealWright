@@ -76,6 +76,13 @@ def inner(pytester: pytest.Pytester, monkeypatch: pytest.MonkeyPatch) -> pytest.
     monkeypatch.setenv("HEALWRIGHT_BASELINE_DIR", str(pytester.path / "baselines"))
     monkeypatch.setenv("HEALWRIGHT_ARTIFACT_DIR", str(pytester.path / "artifacts"))
     monkeypatch.delenv("INNER_SCENARIO", raising=False)
+    # Hermetic Tier 2: these sessions run with NO model provider, whatever the outer
+    # environment says. CI sets HEALWRIGHT_VLM_MODE=replay, which turns key-less providers
+    # into replay stubs (Tier 2 "available", then a cache miss), and a developer may have
+    # a key exported. Tier-2 paths are tested in test_tier2_engine.py with a FakeProvider.
+    monkeypatch.setenv("HEALWRIGHT_VLM_MODE", "record")
+    for key in ("GROQ_API_KEY", "MISTRAL_API_KEY", "GEMINI_API_KEY"):
+        monkeypatch.delenv(key, raising=False)
     pytester.makeconftest(CONFTEST)
     pytester.makepyfile(test_flow=TESTS)
     return pytester
