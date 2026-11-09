@@ -1,0 +1,57 @@
+{
+  "measured_at": "2026-11-07T08:01:32+00:00",
+  "what": "examples suite wall time, subprocess, HEALWRIGHT_MODE off vs record, interleaved",
+  "runs_per_mode": 5,
+  "off_s": [
+    33.84,
+    31.97,
+    31.7,
+    31.31,
+    32.48
+  ],
+  "record_s": [
+    38.26,
+    39.39,
+    39.72,
+    38.79,
+    37.27
+  ],
+  "mean_off_s": 32.26,
+  "mean_record_s": 38.69,
+  "overhead_pct": 19.9,
+  "median_off_s": 31.97,
+  "median_record_s": 38.79,
+  "median_overhead_pct": 21.3,
+  "spread_off_s": {
+    "min": 31.31,
+    "max": 33.84,
+    "stdev": 0.98
+  },
+  "spread_record_s": {
+    "min": 37.27,
+    "max": 39.72,
+    "stdev": 0.97
+  },
+  "paired_overhead_pct": [
+    13.1,
+    23.2,
+    25.3,
+    23.9,
+    14.7
+  ],
+  "median_paired_overhead_pct": 23.2,
+  "median_warm_paired_overhead_pct": 23.5,
+  "record_summaries": [
+    "HealWright mode=record: 69 tests tracked, 202 wrapped actions, 0 recording errors, 69 baseline files written",
+    "HealWright mode=record: 69 tests tracked, 202 wrapped actions, 0 recording errors, 69 baseline files written",
+    "HealWright mode=record: 69 tests tracked, 202 wrapped actions, 0 recording errors, 69 baseline files written",
+    "HealWright mode=record: 69 tests tracked, 202 wrapped actions, 0 recording errors, 1 baseline files written",
+    "HealWright mode=record: 69 tests tracked, 202 wrapped actions, 0 recording errors, 1 baseline files written"
+  ],
+  "target_pct": 10,
+  "environment": {
+    "processor": "Intel64 Family 6 Model 142 Stepping 10, GenuineIntel",
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.11.18"
+  }
+}

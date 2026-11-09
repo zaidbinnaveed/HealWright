@@ -1,0 +1,75 @@
+{
+  "measured_at": "2026-11-06T11:49:27+00:00",
+  "what": "extract.js snapshot via page.evaluate, one round trip per run",
+  "page": "/product/1",
+  "runs": 20,
+  "warmup_runs_excluded": 1,
+  "candidates": 6,
+  "round_trip_ms": {
+    "p50": 8.56,
+    "p95": 15.98,
+    "min": 6.14,
+    "max": 17.34,
+    "samples": [
+      10.23,
+      17.34,
+      9.52,
+      15.91,
+      11.18,
+      6.95,
+      9.19,
+      6.95,
+      8.3,
+      7.17,
+      8.17,
+      6.87,
+      8.04,
+      9.45,
+      8.94,
+      8.53,
+      8.59,
+      6.14,
+      6.79,
+      9.48
+    ]
+  },
+  "in_page_ms": {
+    "p50": 0.8,
+    "p95": 1.5,
+    "samples": [
+      0.8,
+      1.2,
+      1.0,
+      0.9,
+      1.1,
+      0.5,
+      1.5,
+      0.7,
+      1.5,
+      0.6,
+      0.8,
+      0.6,
+      0.7,
+      0.9,
+      0.6,
+      0.8,
+      1.1,
+      0.8,
+      0.6,
+      1.1
+    ]
+  },
+  "target_ms": 150,
+  "environment": {
+    "machine": "DESKTOP-1OECRVH",
+    "processor": "Intel64 Family 6 Model 142 Stepping 10, GenuineIntel",
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.11.18",
+    "chromium": "156.0.8078.4",
+    "headless": true,
+    "viewport": [
+      1280,
+      800
+    ]
+  }
+}

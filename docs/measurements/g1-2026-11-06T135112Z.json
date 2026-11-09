@@ -1,0 +1,312 @@
+{
+  "measured_at": "2026-11-06T13:51:12+00:00",
+  "gate": "G1",
+  "tau_conf": 0.7,
+  "delta_margin": 0.12,
+  "criterion_1": {
+    "classes": [
+      "id_rename",
+      "css_refactor"
+    ],
+    "scenarios": 4,
+    "top1_true_target": 4,
+    "rate": 1.0,
+    "target": 0.8,
+    "passed": true
+  },
+  "criterion_2": {
+    "record_mode_runs": 5,
+    "green_runs": 5,
+    "passed": true
+  },
+  "scenarios": [
+    {
+      "id": "dev-01-id-rename",
+      "class": "id_rename",
+      "expected_outcome": "healed",
+      "step": "#add-to-cart",
+      "top1": {
+        "role": "button",
+        "name": "add to cart",
+        "score": 0.975,
+        "feature_scores": {
+          "role": 1.0,
+          "text": 1.0,
+          "attributes": 0.8333,
+          "ancestors": 1.0,
+          "neighbors": 1.0,
+          "geometry": 1.0
+        }
+      },
+      "top2_score": 0.549,
+      "gate_accepted": true,
+      "gate_reason": "score 0.975, margin 0.426",
+      "candidates": 6,
+      "extract_plus_tier1_ms": 41.92,
+      "expected_action": "add_to_cart",
+      "fired_actions": [
+        "add_to_cart"
+      ],
+      "top1_is_true_target": true
+    },
+    {
+      "id": "dev-02-id-rename",
+      "class": "id_rename",
+      "expected_outcome": "healed",
+      "step": "#confirm-order",
+      "top1": {
+        "role": "button",
+        "name": "confirm order",
+        "score": 0.9638,
+        "feature_scores": {
+          "role": 1.0,
+          "text": 1.0,
+          "attributes": 0.7586,
+          "ancestors": 1.0,
+          "neighbors": 1.0,
+          "geometry": 1.0
+        }
+      },
+      "top2_score": 0.7887,
+      "gate_accepted": true,
+      "gate_reason": "score 0.964, margin 0.175",
+      "candidates": 6,
+      "extract_plus_tier1_ms": 34.28,
+      "expected_action": "confirm_order",
+      "fired_actions": [
+        "confirm_order"
+      ],
+      "top1_is_true_target": true
+    },
+    {
+      "id": "dev-03-css-refactor",
+      "class": "css_refactor",
+      "expected_outcome": "healed",
+      "step": ".buy-box .btn-primary",
+      "top1": {
+        "role": "button",
+        "name": "add to cart",
+        "score": 0.925,
+        "feature_scores": {
+          "role": 1.0,
+          "text": 1.0,
+          "attributes": 0.5,
+          "ancestors": 1.0,
+          "neighbors": 1.0,
+          "geometry": 1.0
+        }
+      },
+      "top2_score": 0.549,
+      "gate_accepted": true,
+      "gate_reason": "score 0.925, margin 0.376",
+      "candidates": 6,
+      "extract_plus_tier1_ms": 36.41,
+      "expected_action": "add_to_cart",
+      "fired_actions": [
+        "add_to_cart"
+      ],
+      "top1_is_true_target": true
+    },
+    {
+      "id": "dev-04-css-refactor",
+      "class": "css_refactor",
+      "expected_outcome": "healed",
+      "step": "#search-form .btn-secondary",
+      "top1": {
+        "role": "button",
+        "name": "search",
+        "score": 0.925,
+        "feature_scores": {
+          "role": 1.0,
+          "text": 1.0,
+          "attributes": 0.5,
+          "ancestors": 1.0,
+          "neighbors": 1.0,
+          "geometry": 0.9999
+        }
+      },
+      "top2_score": 0.5234,
+      "gate_accepted": true,
+      "gate_reason": "score 0.925, margin 0.402",
+      "candidates": 13,
+      "extract_plus_tier1_ms": 56.27,
+      "expected_action": "search",
+      "fired_actions": [
+        "search"
+      ],
+      "top1_is_true_target": true
+    },
+    {
+      "id": "dev-05-copy-drift",
+      "class": "copy_drift",
+      "expected_outcome": "healed",
+      "step": "text=Add to cart",
+      "top1": {
+        "role": "button",
+        "name": "add to basket",
+        "score": 0.9562,
+        "feature_scores": {
+          "role": 1.0,
+          "text": 0.826,
+          "attributes": 1.0,
+          "ancestors": 1.0,
+          "neighbors": 1.0,
+          "geometry": 0.9981
+        }
+      },
+      "top2_score": 0.5482,
+      "gate_accepted": true,
+      "gate_reason": "score 0.956, margin 0.408",
+      "candidates": 6,
+      "extract_plus_tier1_ms": 36.19,
+      "expected_action": "add_to_cart",
+      "fired_actions": [
+        "add_to_cart"
+      ],
+      "top1_is_true_target": true
+    },
+    {
+      "id": "dev-06-copy-drift",
+      "class": "copy_drift",
+      "expected_outcome": "healed",
+      "step": "//button[normalize-space()='Confirm order']",
+      "top1": {
+        "role": "button",
+        "name": "confirm your order",
+        "score": 0.97,
+        "feature_scores": {
+          "role": 1.0,
+          "text": 0.8839,
+          "attributes": 1.0,
+          "ancestors": 1.0,
+          "neighbors": 1.0,
+          "geometry": 0.9936
+        }
+      },
+      "top2_score": 0.7661,
+      "gate_accepted": true,
+      "gate_reason": "score 0.970, margin 0.204",
+      "candidates": 6,
+      "extract_plus_tier1_ms": 11.07,
+      "expected_action": "confirm_order",
+      "fired_actions": [
+        "confirm_order"
+      ],
+      "top1_is_true_target": true
+    },
+    {
+      "id": "dev-07-distractor",
+      "class": "distractor_trap",
+      "expected_outcome": "red_or_true_heal",
+      "step": "#confirm-order",
+      "top1": {
+        "role": "button",
+        "name": "confirm order",
+        "score": 0.9139,
+        "feature_scores": {
+          "role": 1.0,
+          "text": 1.0,
+          "attributes": 0.7121,
+          "ancestors": 1.0,
+          "neighbors": 1.0,
+          "geometry": 0.714
+        }
+      },
+      "top2_score": 0.8842,
+      "gate_accepted": false,
+      "gate_reason": "margin 0.030 < delta 0.12",
+      "candidates": 6,
+      "extract_plus_tier1_ms": 26.72,
+      "expected_action": "confirm_order",
+      "fired_actions": [
+        "confirm_order"
+      ],
+      "top1_is_true_target": true
+    },
+    {
+      "id": "dev-08-distractor",
+      "class": "distractor_trap",
+      "expected_outcome": "red_or_true_heal",
+      "step": "#cancel-order",
+      "top1": {
+        "role": "button",
+        "name": "cancel order",
+        "score": 0.9088,
+        "feature_scores": {
+          "role": 1.0,
+          "text": 1.0,
+          "attributes": 0.7143,
+          "ancestors": 1.0,
+          "neighbors": 1.0,
+          "geometry": 0.6778
+        }
+      },
+      "top2_score": 0.8842,
+      "gate_accepted": false,
+      "gate_reason": "margin 0.025 < delta 0.12",
+      "candidates": 6,
+      "extract_plus_tier1_ms": 32.72,
+      "expected_action": "cancel_order",
+      "fired_actions": [
+        "cancel_order"
+      ],
+      "top1_is_true_target": true
+    },
+    {
+      "id": "dev-09-regression",
+      "class": "regression_trap",
+      "expected_outcome": "red",
+      "step": "#confirm-order",
+      "top1": {
+        "role": "button",
+        "name": "cancel order",
+        "score": 0.8301,
+        "feature_scores": {
+          "role": 1.0,
+          "text": 0.6378,
+          "attributes": 0.5467,
+          "ancestors": 1.0,
+          "neighbors": 0.887,
+          "geometry": 0.9995
+        }
+      },
+      "top2_score": 0.5988,
+      "gate_accepted": true,
+      "gate_reason": "score 0.830, margin 0.231",
+      "candidates": 5,
+      "extract_plus_tier1_ms": 13.48,
+      "expected_action": "confirm_order",
+      "fired_actions": [
+        "cancel_order"
+      ],
+      "top1_is_true_target": false
+    },
+    {
+      "id": "dev-10-regression",
+      "class": "regression_trap",
+      "expected_outcome": "red",
+      "step": "#add-to-cart",
+      "top1": {
+        "role": "link",
+        "name": "back to products",
+        "score": 0.5588,
+        "feature_scores": {
+          "role": 0.6,
+          "text": 0.5888,
+          "attributes": 0.0725,
+          "ancestors": 0.8571,
+          "neighbors": 0.8778,
+          "geometry": 0.5149
+        }
+      },
+      "top2_score": 0.3989,
+      "gate_accepted": false,
+      "gate_reason": "top score 0.559 < tau 0.70",
+      "candidates": 5,
+      "extract_plus_tier1_ms": 32.42,
+      "expected_action": "add_to_cart",
+      "fired_actions": [],
+      "top1_is_true_target": false
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "measured_at": "2026-11-06T12:32:19+00:00",
+  "what": "examples suite wall time, subprocess, HEALWRIGHT_MODE off vs record, interleaved",
+  "runs_per_mode": 3,
+  "off_s": [
+    29.03,
+    22.81,
+    26.56
+  ],
+  "record_s": [
+    26.07,
+    26.68,
+    32.03
+  ],
+  "mean_off_s": 26.13,
+  "mean_record_s": 28.26,
+  "overhead_pct": 8.1,
+  "record_summaries": [
+    "HealWright mode=record: 39 tests tracked, 110 wrapped actions, 0 recording errors, 39 baseline files written",
+    "HealWright mode=record: 39 tests tracked, 110 wrapped actions, 0 recording errors, 39 baseline files written",
+    "HealWright mode=record: 39 tests tracked, 110 wrapped actions, 0 recording errors, 39 baseline files written"
+  ],
+  "target_pct": 10,
+  "environment": {
+    "processor": "Intel64 Family 6 Model 142 Stepping 10, GenuineIntel",
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.11.18"
+  }
+}

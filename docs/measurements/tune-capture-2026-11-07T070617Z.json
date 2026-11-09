@@ -1,0 +1,5651 @@
+{
+ "captured_at": "2026-11-07T070617Z",
+ "split": "dev",
+ "top_k": 8,
+ "scenarios": [
+  {
+   "id": "dev-01-id-rename",
+   "class": "id_rename",
+   "expected_outcome": "healed",
+   "expected_action": "add_to_cart",
+   "step": "#add-to-cart",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "add to cart",
+    "tag": "button",
+    "text": "add to cart",
+    "attributes": {
+     "id": "add-to-cart",
+     "type": "button",
+     "data-testid": "add-to-cart"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-primary"
+    ],
+    "ancestor_path": [
+     "form[form]",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "add to wishlist",
+     "quantity",
+     "lightweight shoes with a grippy sole.",
+     "$89.99",
+     "trail running shoes"
+    ],
+    "bbox": {
+     "x": 303.0,
+     "y": 238.0,
+     "w": 109.3,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "trail running shoes $89.99 lightweight shoes with a grippy sole. quantity add to cart add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "trail running shoes $89.99 lightweight shoes with a grippy sole. quantity add to cart add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "trail running shoes $89.99 lightweight shoes with a grippy sole. quantity add to cart add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "spinbutton",
+     "accessible_name": "quantity",
+     "tag": "input",
+     "text": "",
+     "attributes": {
+      "id": "qty",
+      "name": "qty",
+      "type": "number",
+      "data-testid": "qty"
+     },
+     "class_tokens": [
+      "field-input"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "quantity",
+      "add to cart",
+      "add to wishlist",
+      "lightweight shoes with a grippy sole.",
+      "$89.99"
+     ],
+     "bbox": {
+      "x": 219.0,
+      "y": 240.0,
+      "w": 72.0,
+      "h": 38.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "add to cart",
+     "tag": "button",
+     "text": "add to cart",
+     "attributes": {
+      "id": "btn-add-basket-x7",
+      "type": "button",
+      "data-testid": "add-basket"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-primary"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "add to wishlist",
+      "quantity",
+      "lightweight shoes with a grippy sole.",
+      "$89.99",
+      "trail running shoes"
+     ],
+     "bbox": {
+      "x": 303.0,
+      "y": 238.0,
+      "w": 109.3,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "add to wishlist",
+     "tag": "button",
+     "text": "add to wishlist",
+     "attributes": {
+      "id": "add-to-wishlist",
+      "type": "button",
+      "data-testid": "add-to-wishlist"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "add to cart",
+      "quantity",
+      "lightweight shoes with a grippy sole.",
+      "$89.99",
+      "trail running shoes"
+     ],
+     "bbox": {
+      "x": 424.3,
+      "y": 238.0,
+      "w": 134.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "back to products",
+     "tag": "a",
+     "text": "back to products",
+     "attributes": {
+      "id": "back-to-shop",
+      "href": "/"
+     },
+     "class_tokens": [
+      "link"
+     ],
+     "ancestor_path": [
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "quantity add to cart add to wishlist",
+      "lightweight shoes with a grippy sole.",
+      "$89.99",
+      "trail running shoes",
+      "chaos wear shop cart"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 352.0,
+      "w": 118.6,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "4": [
+     "add_to_cart"
+    ],
+    "5": [
+     "add_to_wishlist"
+    ],
+    "6": [],
+    "2": [],
+    "0": [],
+    "1": []
+   }
+  },
+  {
+   "id": "dev-02-id-rename",
+   "class": "id_rename",
+   "expected_outcome": "healed",
+   "expected_action": "confirm_order",
+   "step": "#confirm-order",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "confirm order",
+    "tag": "button",
+    "text": "confirm order",
+    "attributes": {
+     "id": "confirm-order",
+     "type": "button",
+     "data-testid": "confirm-order"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-primary"
+    ],
+    "ancestor_path": [
+     "div",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "cancel order",
+     "total: $129.50",
+     "continue shopping",
+     "1 x waterproof jacket",
+     "status: pending"
+    ],
+    "bbox": {
+     "x": 144.0,
+     "y": 260.0,
+     "w": 129.2,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "order #1001 status: pending 1 x waterproof jacket total: $129.50 confirm order cancel order continue shopping"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "order #1001 status: pending 1 x waterproof jacket total: $129.50 confirm order cancel order continue shopping"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "order #1001 status: pending 1 x waterproof jacket total: $129.50 confirm order cancel order continue shopping"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "confirm order",
+     "tag": "button",
+     "text": "confirm order",
+     "attributes": {
+      "id": "order-confirm-v2",
+      "type": "button"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-primary"
+     ],
+     "ancestor_path": [
+      "div",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cancel order",
+      "total: $129.50",
+      "continue shopping",
+      "1 x waterproof jacket",
+      "status: pending"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 260.0,
+      "w": 129.2,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "cancel order",
+     "tag": "button",
+     "text": "cancel order",
+     "attributes": {
+      "id": "cancel-order",
+      "type": "button",
+      "data-testid": "cancel-order"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-danger"
+     ],
+     "ancestor_path": [
+      "div",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "confirm order",
+      "total: $129.50",
+      "continue shopping",
+      "1 x waterproof jacket",
+      "status: pending"
+     ],
+     "bbox": {
+      "x": 285.2,
+      "y": 260.0,
+      "w": 119.4,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "continue shopping",
+     "tag": "a",
+     "text": "continue shopping",
+     "attributes": {
+      "id": "order-back",
+      "href": "/"
+     },
+     "class_tokens": [
+      "link"
+     ],
+     "ancestor_path": [
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "confirm order cancel order",
+      "total: $129.50",
+      "1 x waterproof jacket",
+      "status: pending",
+      "order #1001"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 334.0,
+      "w": 134.9,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "3": [
+     "confirm_order"
+    ],
+    "4": [
+     "cancel_order"
+    ],
+    "5": [],
+    "0": [],
+    "2": [],
+    "1": []
+   }
+  },
+  {
+   "id": "dev-03-css-refactor",
+   "class": "css_refactor",
+   "expected_outcome": "healed",
+   "expected_action": "add_to_cart",
+   "step": ".buy-box .btn-primary",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "add to cart",
+    "tag": "button",
+    "text": "add to cart",
+    "attributes": {
+     "id": "add-to-cart",
+     "type": "button",
+     "data-testid": "add-to-cart"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-primary"
+    ],
+    "ancestor_path": [
+     "form[form]",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "add to wishlist",
+     "quantity",
+     "collapsible aluminium, cork grips.",
+     "$79.00",
+     "trekking poles"
+    ],
+    "bbox": {
+     "x": 303.0,
+     "y": 238.0,
+     "w": 109.3,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "trekking poles $79.00 collapsible aluminium, cork grips. quantity add to cart add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "trekking poles $79.00 collapsible aluminium, cork grips. quantity add to cart add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "trekking poles $79.00 collapsible aluminium, cork grips. quantity add to cart add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "spinbutton",
+     "accessible_name": "quantity",
+     "tag": "input",
+     "text": "",
+     "attributes": {
+      "id": "qty",
+      "name": "qty",
+      "type": "number",
+      "data-testid": "qty"
+     },
+     "class_tokens": [
+      "field-input"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "quantity",
+      "add to cart",
+      "add to wishlist",
+      "collapsible aluminium, cork grips.",
+      "$79.00"
+     ],
+     "bbox": {
+      "x": 219.0,
+      "y": 240.0,
+      "w": 72.0,
+      "h": 38.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "add to cart",
+     "tag": "button",
+     "text": "add to cart",
+     "attributes": {
+      "id": "add-to-cart",
+      "type": "button",
+      "data-testid": "add-to-cart"
+     },
+     "class_tokens": [
+      "inline-block",
+      "px-3.5",
+      "py-2",
+      "rounded-md",
+      "border",
+      "bg-blue",
+      "text-white",
+      "cursor-pointer",
+      "text-base"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "add to wishlist",
+      "quantity",
+      "collapsible aluminium, cork grips.",
+      "$79.00",
+      "trekking poles"
+     ],
+     "bbox": {
+      "x": 303.0,
+      "y": 238.0,
+      "w": 109.3,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "add to wishlist",
+     "tag": "button",
+     "text": "add to wishlist",
+     "attributes": {
+      "id": "add-to-wishlist",
+      "type": "button",
+      "data-testid": "add-to-wishlist"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "add to cart",
+      "quantity",
+      "collapsible aluminium, cork grips.",
+      "$79.00",
+      "trekking poles"
+     ],
+     "bbox": {
+      "x": 424.3,
+      "y": 238.0,
+      "w": 134.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "back to products",
+     "tag": "a",
+     "text": "back to products",
+     "attributes": {
+      "id": "back-to-shop",
+      "href": "/"
+     },
+     "class_tokens": [
+      "link"
+     ],
+     "ancestor_path": [
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "quantity add to cart add to wishlist",
+      "collapsible aluminium, cork grips.",
+      "$79.00",
+      "trekking poles",
+      "chaos wear shop cart"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 352.0,
+      "w": 118.6,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "4": [
+     "add_to_cart"
+    ],
+    "5": [
+     "add_to_wishlist"
+    ],
+    "6": [],
+    "2": [],
+    "0": [],
+    "1": []
+   }
+  },
+  {
+   "id": "dev-04-css-refactor",
+   "class": "css_refactor",
+   "expected_outcome": "healed",
+   "expected_action": "search",
+   "step": "#search-form .btn-secondary",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "search",
+    "tag": "button",
+    "text": "search",
+    "attributes": {
+     "id": "search-btn",
+     "type": "button",
+     "data-testid": "search-btn"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-secondary"
+    ],
+    "ancestor_path": [
+     "form[search]",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "products",
+     "trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view details fleece pullove",
+     "chaos wear shop cart"
+    ],
+    "bbox": {
+     "x": 432.0,
+     "y": 137.0,
+     "w": 77.0,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "products search trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view detail"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "products search trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view detail"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "products search trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view detail"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "searchbox",
+     "accessible_name": "search products",
+     "tag": "input",
+     "text": "",
+     "attributes": {
+      "id": "search",
+      "name": "q",
+      "type": "search",
+      "placeholder": "Search products",
+      "data-testid": "search-input"
+     },
+     "class_tokens": [
+      "field-input",
+      "field-input--wide"
+     ],
+     "ancestor_path": [
+      "form[search]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "search",
+      "products",
+      "trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view details fleece pullove",
+      "chaos wear shop cart"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 137.0,
+      "w": 280.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "search",
+     "tag": "button",
+     "text": "search",
+     "attributes": {
+      "id": "search-btn",
+      "type": "button",
+      "data-testid": "search-btn"
+     },
+     "class_tokens": [
+      "inline-block",
+      "px-3",
+      "py-2",
+      "rounded-md",
+      "border",
+      "border-blue",
+      "bg-white",
+      "text-blue",
+      "cursor-pointer",
+      "text-base"
+     ],
+     "ancestor_path": [
+      "form[search]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "products",
+      "trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view details fleece pullove",
+      "chaos wear shop cart"
+     ],
+     "bbox": {
+      "x": 432.0,
+      "y": 137.0,
+      "w": 73.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-1",
+      "data-testid": "view-product-1",
+      "href": "/product/1"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$89.99",
+      "trail running shoes",
+      "waterproof jacket $129.50 view details",
+      "merino wool socks $18.00 view details",
+      "insulated bottle $24.50 view details"
+     ],
+     "bbox": {
+      "x": 161.0,
+      "y": 277.5,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-2",
+      "data-testid": "view-product-2",
+      "href": "/product/2"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$129.50",
+      "waterproof jacket",
+      "trail running shoes $89.99 view details",
+      "merino wool socks $18.00 view details",
+      "insulated bottle $24.50 view details"
+     ],
+     "bbox": {
+      "x": 413.0,
+      "y": 277.5,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-3",
+      "data-testid": "view-product-3",
+      "href": "/product/3"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$18.00",
+      "merino wool socks",
+      "waterproof jacket $129.50 view details",
+      "insulated bottle $24.50 view details",
+      "trail running shoes $89.99 view details"
+     ],
+     "bbox": {
+      "x": 665.0,
+      "y": 277.5,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-4",
+      "data-testid": "view-product-4",
+      "href": "/product/4"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$24.50",
+      "insulated bottle",
+      "merino wool socks $18.00 view details",
+      "daypack 20l $64.00 view details",
+      "waterproof jacket $129.50 view details"
+     ],
+     "bbox": {
+      "x": 917.0,
+      "y": 277.5,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-5",
+      "data-testid": "view-product-5",
+      "href": "/product/5"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$64.00",
+      "daypack 20l",
+      "insulated bottle $24.50 view details",
+      "fleece pullover $55.00 view details",
+      "merino wool socks $18.00 view details"
+     ],
+     "bbox": {
+      "x": 161.0,
+      "y": 435.0,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-6",
+      "data-testid": "view-product-6",
+      "href": "/product/6"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$55.00",
+      "fleece pullover",
+      "daypack 20l $64.00 view details",
+      "headlamp 300lm $32.99 view details",
+      "insulated bottle $24.50 view details"
+     ],
+     "bbox": {
+      "x": 413.0,
+      "y": 435.0,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-7",
+      "data-testid": "view-product-7",
+      "href": "/product/7"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$32.99",
+      "headlamp 300lm",
+      "fleece pullover $55.00 view details",
+      "trekking poles $79.00 view details",
+      "daypack 20l $64.00 view details"
+     ],
+     "bbox": {
+      "x": 665.0,
+      "y": 435.0,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-8",
+      "data-testid": "view-product-8",
+      "href": "/product/8"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$79.00",
+      "trekking poles",
+      "headlamp 300lm $32.99 view details",
+      "fleece pullover $55.00 view details",
+      "daypack 20l $64.00 view details"
+     ],
+     "bbox": {
+      "x": 917.0,
+      "y": 435.0,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "4": [
+     "search"
+    ],
+    "6": [],
+    "5": [],
+    "7": [],
+    "10": [],
+    "9": [],
+    "11": [],
+    "8": []
+   }
+  },
+  {
+   "id": "dev-05-copy-drift",
+   "class": "copy_drift",
+   "expected_outcome": "healed",
+   "expected_action": "add_to_cart",
+   "step": "text=Add to cart",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "add to cart",
+    "tag": "button",
+    "text": "add to cart",
+    "attributes": {
+     "id": "add-to-cart",
+     "type": "button",
+     "data-testid": "add-to-cart"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-primary"
+    ],
+    "ancestor_path": [
+     "form[form]",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "add to wishlist",
+     "quantity",
+     "soft mid-layer for cool evenings.",
+     "$55.00",
+     "fleece pullover"
+    ],
+    "bbox": {
+     "x": 303.0,
+     "y": 238.0,
+     "w": 109.3,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "fleece pullover $55.00 soft mid-layer for cool evenings. quantity add to basket add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "fleece pullover $55.00 soft mid-layer for cool evenings. quantity add to basket add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "fleece pullover $55.00 soft mid-layer for cool evenings. quantity add to basket add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "spinbutton",
+     "accessible_name": "quantity",
+     "tag": "input",
+     "text": "",
+     "attributes": {
+      "id": "qty",
+      "name": "qty",
+      "type": "number",
+      "data-testid": "qty"
+     },
+     "class_tokens": [
+      "field-input"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "quantity",
+      "add to basket",
+      "add to wishlist",
+      "soft mid-layer for cool evenings.",
+      "$55.00"
+     ],
+     "bbox": {
+      "x": 219.0,
+      "y": 240.0,
+      "w": 72.0,
+      "h": 38.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "add to basket",
+     "tag": "button",
+     "text": "add to basket",
+     "attributes": {
+      "id": "add-to-cart",
+      "type": "button",
+      "data-testid": "add-to-cart"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-primary"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "add to wishlist",
+      "quantity",
+      "soft mid-layer for cool evenings.",
+      "$55.00",
+      "fleece pullover"
+     ],
+     "bbox": {
+      "x": 303.0,
+      "y": 238.0,
+      "w": 128.8,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "add to wishlist",
+     "tag": "button",
+     "text": "add to wishlist",
+     "attributes": {
+      "id": "add-to-wishlist",
+      "type": "button",
+      "data-testid": "add-to-wishlist"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "add to basket",
+      "quantity",
+      "soft mid-layer for cool evenings.",
+      "$55.00",
+      "fleece pullover"
+     ],
+     "bbox": {
+      "x": 443.8,
+      "y": 238.0,
+      "w": 134.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "back to products",
+     "tag": "a",
+     "text": "back to products",
+     "attributes": {
+      "id": "back-to-shop",
+      "href": "/"
+     },
+     "class_tokens": [
+      "link"
+     ],
+     "ancestor_path": [
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "quantity add to basket add to wishlist",
+      "soft mid-layer for cool evenings.",
+      "$55.00",
+      "fleece pullover",
+      "chaos wear shop cart"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 352.0,
+      "w": 118.6,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "4": [
+     "add_to_cart"
+    ],
+    "5": [
+     "add_to_wishlist"
+    ],
+    "6": [],
+    "2": [],
+    "0": [],
+    "1": []
+   }
+  },
+  {
+   "id": "dev-06-copy-drift",
+   "class": "copy_drift",
+   "expected_outcome": "healed",
+   "expected_action": "confirm_order",
+   "step": "//button[normalize-space()='Confirm order']",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "confirm order",
+    "tag": "button",
+    "text": "confirm order",
+    "attributes": {
+     "id": "confirm-order",
+     "type": "button",
+     "data-testid": "confirm-order"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-primary"
+    ],
+    "ancestor_path": [
+     "div",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "cancel order",
+     "total: $24.50",
+     "continue shopping",
+     "1 x insulated bottle",
+     "status: pending"
+    ],
+    "bbox": {
+     "x": 144.0,
+     "y": 260.0,
+     "w": 129.2,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "order #1001 status: pending 1 x insulated bottle total: $24.50 confirm your order cancel order continue shopping"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "order #1001 status: pending 1 x insulated bottle total: $24.50 confirm your order cancel order continue shopping"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "order #1001 status: pending 1 x insulated bottle total: $24.50 confirm your order cancel order continue shopping"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "confirm your order",
+     "tag": "button",
+     "text": "confirm your order",
+     "attributes": {
+      "id": "confirm-order",
+      "type": "button",
+      "data-testid": "confirm-order"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-primary"
+     ],
+     "ancestor_path": [
+      "div",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cancel order",
+      "total: $24.50",
+      "continue shopping",
+      "1 x insulated bottle",
+      "status: pending"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 260.0,
+      "w": 165.4,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "cancel order",
+     "tag": "button",
+     "text": "cancel order",
+     "attributes": {
+      "id": "cancel-order",
+      "type": "button",
+      "data-testid": "cancel-order"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-danger"
+     ],
+     "ancestor_path": [
+      "div",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "confirm your order",
+      "total: $24.50",
+      "continue shopping",
+      "1 x insulated bottle",
+      "status: pending"
+     ],
+     "bbox": {
+      "x": 321.4,
+      "y": 260.0,
+      "w": 119.4,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "continue shopping",
+     "tag": "a",
+     "text": "continue shopping",
+     "attributes": {
+      "id": "order-back",
+      "href": "/"
+     },
+     "class_tokens": [
+      "link"
+     ],
+     "ancestor_path": [
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "confirm your order cancel order",
+      "total: $24.50",
+      "1 x insulated bottle",
+      "status: pending",
+      "order #1001"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 334.0,
+      "w": 134.9,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "3": [
+     "confirm_order"
+    ],
+    "4": [
+     "cancel_order"
+    ],
+    "5": [],
+    "0": [],
+    "2": [],
+    "1": []
+   }
+  },
+  {
+   "id": "dev-07-distractor",
+   "class": "distractor_trap",
+   "expected_outcome": "red_or_true_heal",
+   "expected_action": "confirm_order",
+   "step": "#confirm-order",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "confirm order",
+    "tag": "button",
+    "text": "confirm order",
+    "attributes": {
+     "id": "confirm-order",
+     "type": "button",
+     "data-testid": "confirm-order"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-primary"
+    ],
+    "ancestor_path": [
+     "div",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "cancel order",
+     "total: $129.50",
+     "continue shopping",
+     "1 x waterproof jacket",
+     "status: pending"
+    ],
+    "bbox": {
+     "x": 144.0,
+     "y": 260.0,
+     "w": 129.2,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "order #1001 status: pending 1 x waterproof jacket total: $129.50 cancel order confirm order continue shopping"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "order #1001 status: pending 1 x waterproof jacket total: $129.50 cancel order confirm order continue shopping"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "order #1001 status: pending 1 x waterproof jacket total: $129.50 cancel order confirm order continue shopping"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "cancel order",
+     "tag": "button",
+     "text": "cancel order",
+     "attributes": {
+      "id": "cancel-order",
+      "type": "button",
+      "data-testid": "cancel-order"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-primary"
+     ],
+     "ancestor_path": [
+      "div",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "confirm order",
+      "total: $129.50",
+      "continue shopping",
+      "1 x waterproof jacket",
+      "status: pending"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 260.0,
+      "w": 119.4,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "confirm order",
+     "tag": "button",
+     "text": "confirm order",
+     "attributes": {
+      "id": "ord-act-b",
+      "type": "button"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-primary"
+     ],
+     "ancestor_path": [
+      "div",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cancel order",
+      "total: $129.50",
+      "continue shopping",
+      "1 x waterproof jacket",
+      "status: pending"
+     ],
+     "bbox": {
+      "x": 275.4,
+      "y": 260.0,
+      "w": 129.2,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "continue shopping",
+     "tag": "a",
+     "text": "continue shopping",
+     "attributes": {
+      "id": "order-back",
+      "href": "/"
+     },
+     "class_tokens": [
+      "link"
+     ],
+     "ancestor_path": [
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cancel order confirm order",
+      "total: $129.50",
+      "1 x waterproof jacket",
+      "status: pending",
+      "order #1001"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 334.0,
+      "w": 134.9,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "4": [
+     "confirm_order"
+    ],
+    "3": [
+     "cancel_order"
+    ],
+    "5": [],
+    "0": [],
+    "2": [],
+    "1": []
+   }
+  },
+  {
+   "id": "dev-08-distractor",
+   "class": "distractor_trap",
+   "expected_outcome": "red_or_true_heal",
+   "expected_action": "cancel_order",
+   "step": "#cancel-order",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "cancel order",
+    "tag": "button",
+    "text": "cancel order",
+    "attributes": {
+     "id": "cancel-order",
+     "type": "button",
+     "data-testid": "cancel-order"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-danger"
+    ],
+    "ancestor_path": [
+     "div",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "confirm order",
+     "total: $129.50",
+     "continue shopping",
+     "1 x waterproof jacket",
+     "status: pending"
+    ],
+    "bbox": {
+     "x": 285.2,
+     "y": 260.0,
+     "w": 119.4,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "order #1001 status: pending 1 x waterproof jacket total: $129.50 cancel order confirm order continue shopping"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "order #1001 status: pending 1 x waterproof jacket total: $129.50 cancel order confirm order continue shopping"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "order #1001 status: pending 1 x waterproof jacket total: $129.50 cancel order confirm order continue shopping"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "cancel order",
+     "tag": "button",
+     "text": "cancel order",
+     "attributes": {
+      "id": "ord-act-x",
+      "type": "button"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-danger"
+     ],
+     "ancestor_path": [
+      "div",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "confirm order",
+      "total: $129.50",
+      "continue shopping",
+      "1 x waterproof jacket",
+      "status: pending"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 260.0,
+      "w": 119.4,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "confirm order",
+     "tag": "button",
+     "text": "confirm order",
+     "attributes": {
+      "id": "confirm-order",
+      "type": "button",
+      "data-testid": "confirm-order"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-danger"
+     ],
+     "ancestor_path": [
+      "div",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cancel order",
+      "total: $129.50",
+      "continue shopping",
+      "1 x waterproof jacket",
+      "status: pending"
+     ],
+     "bbox": {
+      "x": 275.4,
+      "y": 260.0,
+      "w": 129.2,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "continue shopping",
+     "tag": "a",
+     "text": "continue shopping",
+     "attributes": {
+      "id": "order-back",
+      "href": "/"
+     },
+     "class_tokens": [
+      "link"
+     ],
+     "ancestor_path": [
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cancel order confirm order",
+      "total: $129.50",
+      "1 x waterproof jacket",
+      "status: pending",
+      "order #1001"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 334.0,
+      "w": 134.9,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "3": [
+     "cancel_order"
+    ],
+    "4": [
+     "confirm_order"
+    ],
+    "5": [],
+    "0": [],
+    "2": [],
+    "1": []
+   }
+  },
+  {
+   "id": "dev-09-regression",
+   "class": "regression_trap",
+   "expected_outcome": "red",
+   "expected_action": "confirm_order",
+   "step": "#confirm-order",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "confirm order",
+    "tag": "button",
+    "text": "confirm order",
+    "attributes": {
+     "id": "confirm-order",
+     "type": "button",
+     "data-testid": "confirm-order"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-primary"
+    ],
+    "ancestor_path": [
+     "div",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "cancel order",
+     "total: $129.50",
+     "continue shopping",
+     "1 x waterproof jacket",
+     "status: pending"
+    ],
+    "bbox": {
+     "x": 144.0,
+     "y": 260.0,
+     "w": 129.2,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "order #1001 status: pending 1 x waterproof jacket total: $129.50 cancel order continue shopping"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "order #1001 status: pending 1 x waterproof jacket total: $129.50 cancel order continue shopping"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "order #1001 status: pending 1 x waterproof jacket total: $129.50 cancel order continue shopping"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "cancel order",
+     "tag": "button",
+     "text": "cancel order",
+     "attributes": {
+      "id": "cancel-order",
+      "type": "button",
+      "data-testid": "cancel-order"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-danger"
+     ],
+     "ancestor_path": [
+      "div",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "total: $129.50",
+      "continue shopping",
+      "1 x waterproof jacket",
+      "status: pending",
+      "order #1001"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 260.0,
+      "w": 119.4,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "continue shopping",
+     "tag": "a",
+     "text": "continue shopping",
+     "attributes": {
+      "id": "order-back",
+      "href": "/"
+     },
+     "class_tokens": [
+      "link"
+     ],
+     "ancestor_path": [
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cancel order",
+      "total: $129.50",
+      "1 x waterproof jacket",
+      "status: pending",
+      "order #1001"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 334.0,
+      "w": 134.9,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "3": [
+     "cancel_order"
+    ],
+    "4": [],
+    "0": [],
+    "2": [],
+    "1": []
+   }
+  },
+  {
+   "id": "dev-10-regression",
+   "class": "regression_trap",
+   "expected_outcome": "red",
+   "expected_action": "add_to_cart",
+   "step": "#add-to-cart",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "add to cart",
+    "tag": "button",
+    "text": "add to cart",
+    "attributes": {
+     "id": "add-to-cart",
+     "type": "button",
+     "data-testid": "add-to-cart"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-primary"
+    ],
+    "ancestor_path": [
+     "form[form]",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "add to wishlist",
+     "quantity",
+     "lightweight shoes with a grippy sole.",
+     "$89.99",
+     "trail running shoes"
+    ],
+    "bbox": {
+     "x": 303.0,
+     "y": 238.0,
+     "w": 109.3,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "trail running shoes $89.99 lightweight shoes with a grippy sole. quantity add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "trail running shoes $89.99 lightweight shoes with a grippy sole. quantity add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "trail running shoes $89.99 lightweight shoes with a grippy sole. quantity add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "spinbutton",
+     "accessible_name": "quantity",
+     "tag": "input",
+     "text": "",
+     "attributes": {
+      "id": "qty",
+      "name": "qty",
+      "type": "number",
+      "data-testid": "qty"
+     },
+     "class_tokens": [
+      "field-input"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "quantity",
+      "add to wishlist",
+      "lightweight shoes with a grippy sole.",
+      "$89.99",
+      "trail running shoes"
+     ],
+     "bbox": {
+      "x": 219.0,
+      "y": 240.0,
+      "w": 72.0,
+      "h": 38.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "add to wishlist",
+     "tag": "button",
+     "text": "add to wishlist",
+     "attributes": {
+      "id": "add-to-wishlist",
+      "type": "button",
+      "data-testid": "add-to-wishlist"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "quantity",
+      "lightweight shoes with a grippy sole.",
+      "$89.99",
+      "trail running shoes",
+      "back to products"
+     ],
+     "bbox": {
+      "x": 303.0,
+      "y": 238.0,
+      "w": 134.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "back to products",
+     "tag": "a",
+     "text": "back to products",
+     "attributes": {
+      "id": "back-to-shop",
+      "href": "/"
+     },
+     "class_tokens": [
+      "link"
+     ],
+     "ancestor_path": [
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "quantity add to wishlist",
+      "lightweight shoes with a grippy sole.",
+      "$89.99",
+      "trail running shoes",
+      "chaos wear shop cart"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 352.0,
+      "w": 118.6,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "4": [
+     "add_to_wishlist"
+    ],
+    "5": [],
+    "2": [],
+    "0": [],
+    "1": []
+   }
+  },
+  {
+   "id": "dev-11-tag-to-aria",
+   "class": "tag_to_aria",
+   "expected_outcome": "healed",
+   "expected_action": "add_to_cart",
+   "step": "button:has-text('Add to cart')",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "add to cart",
+    "tag": "button",
+    "text": "add to cart",
+    "attributes": {
+     "id": "add-to-cart",
+     "type": "button",
+     "data-testid": "add-to-cart"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-primary"
+    ],
+    "ancestor_path": [
+     "form[form]",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "add to wishlist",
+     "quantity",
+     "lightweight shoes with a grippy sole.",
+     "$89.99",
+     "trail running shoes"
+    ],
+    "bbox": {
+     "x": 303.0,
+     "y": 238.0,
+     "w": 109.3,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "trail running shoes $89.99 lightweight shoes with a grippy sole. quantity add to cart add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "trail running shoes $89.99 lightweight shoes with a grippy sole. quantity add to cart add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "trail running shoes $89.99 lightweight shoes with a grippy sole. quantity add to cart add to wishlist back to products"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "spinbutton",
+     "accessible_name": "quantity",
+     "tag": "input",
+     "text": "",
+     "attributes": {
+      "id": "qty",
+      "name": "qty",
+      "type": "number",
+      "data-testid": "qty"
+     },
+     "class_tokens": [
+      "field-input"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "quantity",
+      "add to cart",
+      "add to wishlist",
+      "lightweight shoes with a grippy sole.",
+      "$89.99"
+     ],
+     "bbox": {
+      "x": 219.0,
+      "y": 240.0,
+      "w": 72.0,
+      "h": 38.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "add to cart",
+     "tag": "div",
+     "text": "add to cart",
+     "attributes": {
+      "id": "add-to-cart",
+      "data-testid": "add-to-cart"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-primary"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "add to wishlist",
+      "quantity",
+      "lightweight shoes with a grippy sole.",
+      "$89.99",
+      "trail running shoes"
+     ],
+     "bbox": {
+      "x": 303.0,
+      "y": 238.0,
+      "w": 109.3,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "add to wishlist",
+     "tag": "button",
+     "text": "add to wishlist",
+     "attributes": {
+      "id": "add-to-wishlist",
+      "type": "button",
+      "data-testid": "add-to-wishlist"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "add to cart",
+      "quantity",
+      "lightweight shoes with a grippy sole.",
+      "$89.99",
+      "trail running shoes"
+     ],
+     "bbox": {
+      "x": 424.3,
+      "y": 238.0,
+      "w": 134.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "back to products",
+     "tag": "a",
+     "text": "back to products",
+     "attributes": {
+      "id": "back-to-shop",
+      "href": "/"
+     },
+     "class_tokens": [
+      "link"
+     ],
+     "ancestor_path": [
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "quantity add to cart add to wishlist",
+      "lightweight shoes with a grippy sole.",
+      "$89.99",
+      "trail running shoes",
+      "chaos wear shop cart"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 352.0,
+      "w": 118.6,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "4": [
+     "add_to_cart"
+    ],
+    "5": [
+     "add_to_wishlist"
+    ],
+    "6": [],
+    "2": [],
+    "0": [],
+    "1": []
+   }
+  },
+  {
+   "id": "dev-12-tag-to-aria",
+   "class": "tag_to_aria",
+   "expected_outcome": "healed",
+   "expected_action": "search",
+   "step": "#search-form button",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "search",
+    "tag": "button",
+    "text": "search",
+    "attributes": {
+     "id": "search-btn",
+     "type": "button",
+     "data-testid": "search-btn"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-secondary"
+    ],
+    "ancestor_path": [
+     "form[search]",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "products",
+     "trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view details fleece pullove",
+     "chaos wear shop cart"
+    ],
+    "bbox": {
+     "x": 432.0,
+     "y": 137.0,
+     "w": 77.0,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "products search trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view detail"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "products search trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view detail"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "products search trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view detail"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "searchbox",
+     "accessible_name": "search products",
+     "tag": "input",
+     "text": "",
+     "attributes": {
+      "id": "search",
+      "name": "q",
+      "type": "search",
+      "placeholder": "Search products",
+      "data-testid": "search-input"
+     },
+     "class_tokens": [
+      "field-input",
+      "field-input--wide"
+     ],
+     "ancestor_path": [
+      "form[search]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "search",
+      "products",
+      "trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view details fleece pullove",
+      "chaos wear shop cart"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 137.0,
+      "w": 280.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "search",
+     "tag": "div",
+     "text": "search",
+     "attributes": {
+      "id": "search-btn",
+      "data-testid": "search-btn"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "form[search]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "products",
+      "trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view details fleece pullove",
+      "chaos wear shop cart"
+     ],
+     "bbox": {
+      "x": 432.0,
+      "y": 137.0,
+      "w": 77.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-1",
+      "data-testid": "view-product-1",
+      "href": "/product/1"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$89.99",
+      "trail running shoes",
+      "waterproof jacket $129.50 view details",
+      "merino wool socks $18.00 view details",
+      "insulated bottle $24.50 view details"
+     ],
+     "bbox": {
+      "x": 161.0,
+      "y": 277.5,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-2",
+      "data-testid": "view-product-2",
+      "href": "/product/2"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$129.50",
+      "waterproof jacket",
+      "trail running shoes $89.99 view details",
+      "merino wool socks $18.00 view details",
+      "insulated bottle $24.50 view details"
+     ],
+     "bbox": {
+      "x": 413.0,
+      "y": 277.5,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-3",
+      "data-testid": "view-product-3",
+      "href": "/product/3"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$18.00",
+      "merino wool socks",
+      "waterproof jacket $129.50 view details",
+      "insulated bottle $24.50 view details",
+      "trail running shoes $89.99 view details"
+     ],
+     "bbox": {
+      "x": 665.0,
+      "y": 277.5,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-4",
+      "data-testid": "view-product-4",
+      "href": "/product/4"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$24.50",
+      "insulated bottle",
+      "merino wool socks $18.00 view details",
+      "daypack 20l $64.00 view details",
+      "waterproof jacket $129.50 view details"
+     ],
+     "bbox": {
+      "x": 917.0,
+      "y": 277.5,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-5",
+      "data-testid": "view-product-5",
+      "href": "/product/5"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$64.00",
+      "daypack 20l",
+      "insulated bottle $24.50 view details",
+      "fleece pullover $55.00 view details",
+      "merino wool socks $18.00 view details"
+     ],
+     "bbox": {
+      "x": 161.0,
+      "y": 435.0,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-6",
+      "data-testid": "view-product-6",
+      "href": "/product/6"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$55.00",
+      "fleece pullover",
+      "daypack 20l $64.00 view details",
+      "headlamp 300lm $32.99 view details",
+      "insulated bottle $24.50 view details"
+     ],
+     "bbox": {
+      "x": 413.0,
+      "y": 435.0,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-7",
+      "data-testid": "view-product-7",
+      "href": "/product/7"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$32.99",
+      "headlamp 300lm",
+      "fleece pullover $55.00 view details",
+      "trekking poles $79.00 view details",
+      "daypack 20l $64.00 view details"
+     ],
+     "bbox": {
+      "x": 665.0,
+      "y": 435.0,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-8",
+      "data-testid": "view-product-8",
+      "href": "/product/8"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$79.00",
+      "trekking poles",
+      "headlamp 300lm $32.99 view details",
+      "fleece pullover $55.00 view details",
+      "daypack 20l $64.00 view details"
+     ],
+     "bbox": {
+      "x": 917.0,
+      "y": 435.0,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "4": [
+     "search"
+    ],
+    "6": [],
+    "5": [],
+    "7": [],
+    "10": [],
+    "9": [],
+    "11": [],
+    "8": []
+   }
+  },
+  {
+   "id": "dev-13-layout-move",
+   "class": "layout_move",
+   "expected_outcome": "healed",
+   "expected_action": "add_to_cart",
+   "step": "#buy-box > button:nth-child(4)",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "add to cart",
+    "tag": "button",
+    "text": "add to cart",
+    "attributes": {
+     "id": "add-to-cart",
+     "type": "button",
+     "data-testid": "add-to-cart"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-primary"
+    ],
+    "ancestor_path": [
+     "form[form]",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "add to wishlist",
+     "quantity",
+     "rechargeable, with a red night mode.",
+     "$32.99",
+     "headlamp 300lm"
+    ],
+    "bbox": {
+     "x": 303.0,
+     "y": 238.0,
+     "w": 109.3,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "headlamp 300lm $32.99 rechargeable, with a red night mode. add to cart add to wishlist quantity back to products"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "headlamp 300lm $32.99 rechargeable, with a red night mode. add to cart add to wishlist quantity back to products"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "headlamp 300lm $32.99 rechargeable, with a red night mode. add to cart add to wishlist quantity back to products"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "add to cart",
+     "tag": "button",
+     "text": "add to cart",
+     "attributes": {
+      "id": "add-to-cart",
+      "type": "button",
+      "data-testid": "add-to-cart"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-primary"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "add to wishlist",
+      "quantity",
+      "rechargeable, with a red night mode.",
+      "$32.99",
+      "headlamp 300lm"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 238.0,
+      "w": 109.3,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "add to wishlist",
+     "tag": "button",
+     "text": "add to wishlist",
+     "attributes": {
+      "id": "add-to-wishlist",
+      "type": "button",
+      "data-testid": "add-to-wishlist"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "add to cart",
+      "quantity",
+      "rechargeable, with a red night mode.",
+      "$32.99",
+      "headlamp 300lm"
+     ],
+     "bbox": {
+      "x": 265.3,
+      "y": 238.0,
+      "w": 134.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "spinbutton",
+     "accessible_name": "quantity",
+     "tag": "input",
+     "text": "",
+     "attributes": {
+      "id": "qty",
+      "name": "qty",
+      "type": "number",
+      "data-testid": "qty"
+     },
+     "class_tokens": [
+      "field-input"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "quantity",
+      "add to wishlist",
+      "add to cart",
+      "rechargeable, with a red night mode.",
+      "$32.99"
+     ],
+     "bbox": {
+      "x": 486.2,
+      "y": 240.0,
+      "w": 72.0,
+      "h": 38.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "back to products",
+     "tag": "a",
+     "text": "back to products",
+     "attributes": {
+      "id": "back-to-shop",
+      "href": "/"
+     },
+     "class_tokens": [
+      "link"
+     ],
+     "ancestor_path": [
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "add to cart add to wishlist quantity",
+      "rechargeable, with a red night mode.",
+      "$32.99",
+      "headlamp 300lm",
+      "chaos wear shop cart"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 352.0,
+      "w": 118.6,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "3": [
+     "add_to_cart"
+    ],
+    "4": [
+     "add_to_wishlist"
+    ],
+    "6": [],
+    "2": [],
+    "0": [],
+    "1": []
+   }
+  },
+  {
+   "id": "dev-14-layout-move",
+   "class": "layout_move",
+   "expected_outcome": "healed",
+   "expected_action": "search",
+   "step": "#search-form > button:nth-child(3)",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "search",
+    "tag": "button",
+    "text": "search",
+    "attributes": {
+     "id": "search-btn",
+     "type": "button",
+     "data-testid": "search-btn"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-secondary"
+    ],
+    "ancestor_path": [
+     "form[search]",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "products",
+     "trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view details fleece pullove",
+     "chaos wear shop cart"
+    ],
+    "bbox": {
+     "x": 432.0,
+     "y": 137.0,
+     "w": 77.0,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop cart",
+      "products search trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view detail"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "shop",
+     "tag": "a",
+     "text": "shop",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cart",
+      "chaos wear",
+      "products search trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view detail"
+     ],
+     "bbox": {
+      "x": 1174.6,
+      "y": 15.0,
+      "w": 36.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "cart",
+     "tag": "a",
+     "text": "cart",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "shop",
+      "chaos wear",
+      "products search trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view detail"
+     ],
+     "bbox": {
+      "x": 1227.0,
+      "y": 15.0,
+      "w": 29.0,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "search",
+     "tag": "button",
+     "text": "search",
+     "attributes": {
+      "id": "search-btn",
+      "type": "button",
+      "data-testid": "search-btn"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "form[search]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "products",
+      "trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view details fleece pullove",
+      "chaos wear shop cart"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 137.0,
+      "w": 77.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "searchbox",
+     "accessible_name": "search products",
+     "tag": "input",
+     "text": "",
+     "attributes": {
+      "id": "search",
+      "name": "q",
+      "type": "search",
+      "placeholder": "Search products",
+      "data-testid": "search-input"
+     },
+     "class_tokens": [
+      "field-input",
+      "field-input--wide"
+     ],
+     "ancestor_path": [
+      "form[search]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "search",
+      "products",
+      "trail running shoes $89.99 view details waterproof jacket $129.50 view details merino wool socks $18.00 view details insulated bottle $24.50 view details daypack 20l $64.00 view details fleece pullove",
+      "chaos wear shop cart"
+     ],
+     "bbox": {
+      "x": 229.0,
+      "y": 137.0,
+      "w": 280.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-1",
+      "data-testid": "view-product-1",
+      "href": "/product/1"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$89.99",
+      "trail running shoes",
+      "waterproof jacket $129.50 view details",
+      "merino wool socks $18.00 view details",
+      "insulated bottle $24.50 view details"
+     ],
+     "bbox": {
+      "x": 161.0,
+      "y": 277.5,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-2",
+      "data-testid": "view-product-2",
+      "href": "/product/2"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$129.50",
+      "waterproof jacket",
+      "trail running shoes $89.99 view details",
+      "merino wool socks $18.00 view details",
+      "insulated bottle $24.50 view details"
+     ],
+     "bbox": {
+      "x": 413.0,
+      "y": 277.5,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-3",
+      "data-testid": "view-product-3",
+      "href": "/product/3"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$18.00",
+      "merino wool socks",
+      "waterproof jacket $129.50 view details",
+      "insulated bottle $24.50 view details",
+      "trail running shoes $89.99 view details"
+     ],
+     "bbox": {
+      "x": 665.0,
+      "y": 277.5,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-4",
+      "data-testid": "view-product-4",
+      "href": "/product/4"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$24.50",
+      "insulated bottle",
+      "merino wool socks $18.00 view details",
+      "daypack 20l $64.00 view details",
+      "waterproof jacket $129.50 view details"
+     ],
+     "bbox": {
+      "x": 917.0,
+      "y": 277.5,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-5",
+      "data-testid": "view-product-5",
+      "href": "/product/5"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$64.00",
+      "daypack 20l",
+      "insulated bottle $24.50 view details",
+      "fleece pullover $55.00 view details",
+      "merino wool socks $18.00 view details"
+     ],
+     "bbox": {
+      "x": 161.0,
+      "y": 435.0,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-6",
+      "data-testid": "view-product-6",
+      "href": "/product/6"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$55.00",
+      "fleece pullover",
+      "daypack 20l $64.00 view details",
+      "headlamp 300lm $32.99 view details",
+      "insulated bottle $24.50 view details"
+     ],
+     "bbox": {
+      "x": 413.0,
+      "y": 435.0,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-7",
+      "data-testid": "view-product-7",
+      "href": "/product/7"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$32.99",
+      "headlamp 300lm",
+      "fleece pullover $55.00 view details",
+      "trekking poles $79.00 view details",
+      "daypack 20l $64.00 view details"
+     ],
+     "bbox": {
+      "x": 665.0,
+      "y": 435.0,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "view details",
+     "tag": "a",
+     "text": "view details",
+     "attributes": {
+      "id": "view-product-8",
+      "data-testid": "view-product-8",
+      "href": "/product/8"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "li[listitem]",
+      "ul[list]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "$79.00",
+      "trekking poles",
+      "headlamp 300lm $32.99 view details",
+      "fleece pullover $55.00 view details",
+      "daypack 20l $64.00 view details"
+     ],
+     "bbox": {
+      "x": 917.0,
+      "y": 435.0,
+      "w": 202.0,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "3": [
+     "search"
+    ],
+    "6": [],
+    "5": [],
+    "7": [],
+    "10": [],
+    "9": [],
+    "11": [],
+    "8": []
+   }
+  },
+  {
+   "id": "dev-15-i18n",
+   "class": "i18n",
+   "expected_outcome": "healed",
+   "expected_action": "add_to_cart",
+   "step": "text=Add to cart",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "add to cart",
+    "tag": "button",
+    "text": "add to cart",
+    "attributes": {
+     "id": "add-to-cart",
+     "type": "button",
+     "data-testid": "add-to-cart"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-primary"
+    ],
+    "ancestor_path": [
+     "form[form]",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "add to wishlist",
+     "quantity",
+     "soft mid-layer for cool evenings.",
+     "$55.00",
+     "fleece pullover"
+    ],
+    "bbox": {
+     "x": 303.0,
+     "y": 238.0,
+     "w": 109.3,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "tienda carrito",
+      "fleece pullover $55.00 soft mid-layer for cool evenings. cantidad a\u00f1adir al carrito a\u00f1adir a la lista de deseos volver a productos"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "tienda",
+     "tag": "a",
+     "text": "tienda",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "carrito",
+      "chaos wear",
+      "fleece pullover $55.00 soft mid-layer for cool evenings. cantidad a\u00f1adir al carrito a\u00f1adir a la lista de deseos volver a productos"
+     ],
+     "bbox": {
+      "x": 1144.9,
+      "y": 15.0,
+      "w": 47.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "carrito",
+     "tag": "a",
+     "text": "carrito",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "tienda",
+      "chaos wear",
+      "fleece pullover $55.00 soft mid-layer for cool evenings. cantidad a\u00f1adir al carrito a\u00f1adir a la lista de deseos volver a productos"
+     ],
+     "bbox": {
+      "x": 1208.2,
+      "y": 15.0,
+      "w": 47.8,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "spinbutton",
+     "accessible_name": "cantidad",
+     "tag": "input",
+     "text": "",
+     "attributes": {
+      "id": "qty",
+      "name": "qty",
+      "type": "number",
+      "data-testid": "qty"
+     },
+     "class_tokens": [
+      "field-input"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cantidad",
+      "a\u00f1adir al carrito",
+      "a\u00f1adir a la lista de deseos",
+      "soft mid-layer for cool evenings.",
+      "$55.00"
+     ],
+     "bbox": {
+      "x": 221.2,
+      "y": 240.0,
+      "w": 72.0,
+      "h": 38.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "a\u00f1adir al carrito",
+     "tag": "button",
+     "text": "a\u00f1adir al carrito",
+     "attributes": {
+      "id": "add-to-cart",
+      "type": "button",
+      "data-testid": "add-to-cart"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-primary"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "a\u00f1adir a la lista de deseos",
+      "cantidad",
+      "soft mid-layer for cool evenings.",
+      "$55.00",
+      "fleece pullover"
+     ],
+     "bbox": {
+      "x": 305.2,
+      "y": 238.0,
+      "w": 142.5,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "a\u00f1adir a la lista de deseos",
+     "tag": "button",
+     "text": "a\u00f1adir a la lista de deseos",
+     "attributes": {
+      "id": "add-to-wishlist",
+      "type": "button",
+      "data-testid": "add-to-wishlist"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-secondary"
+     ],
+     "ancestor_path": [
+      "form[form]",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "a\u00f1adir al carrito",
+      "cantidad",
+      "soft mid-layer for cool evenings.",
+      "$55.00",
+      "fleece pullover"
+     ],
+     "bbox": {
+      "x": 459.7,
+      "y": 238.0,
+      "w": 213.5,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "volver a productos",
+     "tag": "a",
+     "text": "volver a productos",
+     "attributes": {
+      "id": "back-to-shop",
+      "href": "/"
+     },
+     "class_tokens": [
+      "link"
+     ],
+     "ancestor_path": [
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cantidad a\u00f1adir al carrito a\u00f1adir a la lista de deseos",
+      "soft mid-layer for cool evenings.",
+      "$55.00",
+      "fleece pullover",
+      "chaos wear tienda carrito"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 352.0,
+      "w": 132.5,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "4": [
+     "add_to_cart"
+    ],
+    "5": [
+     "add_to_wishlist"
+    ],
+    "6": [],
+    "2": [],
+    "0": [],
+    "1": []
+   }
+  },
+  {
+   "id": "dev-16-i18n",
+   "class": "i18n",
+   "expected_outcome": "healed",
+   "expected_action": "confirm_order",
+   "step": "text=Confirm order",
+   "target": {
+    "schema_version": 1,
+    "role": "button",
+    "accessible_name": "confirm order",
+    "tag": "button",
+    "text": "confirm order",
+    "attributes": {
+     "id": "confirm-order",
+     "type": "button",
+     "data-testid": "confirm-order"
+    },
+    "class_tokens": [
+     "btn",
+     "btn-primary"
+    ],
+    "ancestor_path": [
+     "div",
+     "main[main]",
+     "body",
+     "html"
+    ],
+    "neighbor_texts": [
+     "cancel order",
+     "total: $79.00",
+     "continue shopping",
+     "1 x trekking poles",
+     "status: pending"
+    ],
+    "bbox": {
+     "x": 144.0,
+     "y": 260.0,
+     "w": 129.2,
+     "h": 42.0
+    },
+    "viewport": [
+     1280,
+     800
+    ],
+    "in_shadow_dom": false
+   },
+   "candidates": [
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "chaos wear",
+     "tag": "a",
+     "text": "chaos wear",
+     "attributes": {
+      "id": "brand",
+      "href": "/"
+     },
+     "class_tokens": [
+      "brand"
+     ],
+     "ancestor_path": [
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "tienda carrito",
+      "order #1001 status: pending 1 x trekking poles total: $79.00 confirmar pedido cancelar pedido seguir comprando"
+     ],
+     "bbox": {
+      "x": 24.0,
+      "y": 12.0,
+      "w": 110.9,
+      "h": 30.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "tienda",
+     "tag": "a",
+     "text": "tienda",
+     "attributes": {
+      "id": "nav-home",
+      "data-testid": "nav-home",
+      "href": "/"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "carrito",
+      "chaos wear",
+      "order #1001 status: pending 1 x trekking poles total: $79.00 confirmar pedido cancelar pedido seguir comprando"
+     ],
+     "bbox": {
+      "x": 1144.9,
+      "y": 15.0,
+      "w": 47.3,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "carrito",
+     "tag": "a",
+     "text": "carrito",
+     "attributes": {
+      "id": "nav-cart",
+      "data-testid": "nav-cart",
+      "href": "/cart"
+     },
+     "class_tokens": [
+      "nav-link"
+     ],
+     "ancestor_path": [
+      "nav[navigation]",
+      "header[banner]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "tienda",
+      "chaos wear",
+      "order #1001 status: pending 1 x trekking poles total: $79.00 confirmar pedido cancelar pedido seguir comprando"
+     ],
+     "bbox": {
+      "x": 1208.2,
+      "y": 15.0,
+      "w": 47.8,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "confirmar pedido",
+     "tag": "button",
+     "text": "confirmar pedido",
+     "attributes": {
+      "id": "confirm-order",
+      "type": "button",
+      "data-testid": "confirm-order"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-primary"
+     ],
+     "ancestor_path": [
+      "div",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "cancelar pedido",
+      "total: $79.00",
+      "seguir comprando",
+      "1 x trekking poles",
+      "status: pending"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 260.0,
+      "w": 154.5,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "button",
+     "accessible_name": "cancelar pedido",
+     "tag": "button",
+     "text": "cancelar pedido",
+     "attributes": {
+      "id": "cancel-order",
+      "type": "button",
+      "data-testid": "cancel-order"
+     },
+     "class_tokens": [
+      "btn",
+      "btn-danger"
+     ],
+     "ancestor_path": [
+      "div",
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "confirmar pedido",
+      "total: $79.00",
+      "seguir comprando",
+      "1 x trekking poles",
+      "status: pending"
+     ],
+     "bbox": {
+      "x": 310.5,
+      "y": 260.0,
+      "w": 144.7,
+      "h": 42.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    },
+    {
+     "schema_version": 1,
+     "role": "link",
+     "accessible_name": "seguir comprando",
+     "tag": "a",
+     "text": "seguir comprando",
+     "attributes": {
+      "id": "order-back",
+      "href": "/"
+     },
+     "class_tokens": [
+      "link"
+     ],
+     "ancestor_path": [
+      "main[main]",
+      "body",
+      "html"
+     ],
+     "neighbor_texts": [
+      "confirmar pedido cancelar pedido",
+      "total: $79.00",
+      "1 x trekking poles",
+      "status: pending",
+      "order #1001"
+     ],
+     "bbox": {
+      "x": 144.0,
+      "y": 334.0,
+      "w": 130.7,
+      "h": 24.0
+     },
+     "viewport": [
+      1280,
+      800
+     ],
+     "in_shadow_dom": false
+    }
+   ],
+   "labels": {
+    "3": [
+     "confirm_order"
+    ],
+    "4": [
+     "cancel_order"
+    ],
+    "5": [],
+    "0": [],
+    "2": [],
+    "1": []
+   }
+  }
+ ]
+}

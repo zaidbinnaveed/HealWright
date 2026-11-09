@@ -1,0 +1,22 @@
+{
+  "measured_at": "2026-11-06T12:50:33+00:00",
+  "what": "score_candidates(limit=15) wall time, scorer only (no extraction)",
+  "reps": 200,
+  "synthetic_300": {
+    "candidates": 300,
+    "p50_ms": 4.855,
+    "p95_ms": 5.681,
+    "max_ms": 6.709
+  },
+  "chaos_catalog": {
+    "candidates": 13,
+    "p50_ms": 0.36,
+    "p95_ms": 0.789,
+    "max_ms": 1.332
+  },
+  "target_p95_ms": 10,
+  "environment": {
+    "processor": "Intel64 Family 6 Model 142 Stepping 10, GenuineIntel",
+    "python": "3.11.18"
+  }
+}
