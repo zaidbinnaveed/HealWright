@@ -60,6 +60,16 @@ class Settings(BaseSettings):
     # API: when set, every /api request needs "Authorization: Bearer <token>",
     # and `healwright serve` may bind to a non-local address.
     api_token: SecretStr | None = None
+    # Public-safe mode for a hosted demo: no triage or patch apply, no headed
+    # watch mode, one demo at a time plus a per-visitor cooldown, demo temp files removed.
+    # It also allows `healwright serve` to bind to a non-local address without a token,
+    # because nothing that writes to the repository is reachable.
+    public: bool = False
+    demo_cooldown_s: Annotated[float, Field(ge=0, le=3600)] = 60.0
+    # Internal Chaos Store for "Open the broken shop", proxied under /shop (public mode).
+    shop_url: str | None = None
+    # Extra CORS origins (comma-separated), e.g. the hosted showcase site.
+    cors_origins: Annotated[tuple[str, ...], NoDecode] = ()
 
     # --- Providers (no prefix: an explicit alias bypasses env_prefix) ---
     gemini_api_key: SecretStr | None = Field(default=None, validation_alias="GEMINI_API_KEY")
@@ -69,6 +79,13 @@ class Settings(BaseSettings):
         default="qwen/qwen3.8-27b",  # live-checked 2026-11-07; Llama 4 Scout gone (404)
         validation_alias="GROQ_MODEL",
     )
+
+    @field_validator("cors_origins", mode="before")
+    @classmethod
+    def _split_origins(cls, value: object) -> object:
+        if isinstance(value, str):
+            return tuple(part.strip().rstrip("/") for part in value.split(",") if part.strip())
+        return value
 
     @field_validator("providers", mode="before")
     @classmethod

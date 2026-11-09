@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import { ApiError, postJson, request, useResource } from "../api/client";
 import type { DemoRun, DemoStage, DevScenario } from "../api/types";
@@ -10,6 +10,7 @@ import { Checkbox, Spinner } from "../components/ui/Feedback";
 import { Stepper } from "../components/ui/Navigation";
 import { useToast } from "../components/ui/toast-context";
 import { EmptyState, ErrorBanner, SkeletonCard } from "../components/States";
+import { useFeatures } from "../lib/useFeatures";
 import { useTitle } from "../lib/useTitle";
 
 const STEPS: { stage: DemoStage; label: string; detail: string }[] = [
@@ -51,6 +52,47 @@ function asApiError(e: unknown): ApiError {
   return e instanceof ApiError ? e : new ApiError(0, "UNKNOWN", String(e), null);
 }
 
+/** A demo is running for someone else, or this visitor must wait a moment (public demo). */
+function BusyNotice({ error, onReady }: { error: ApiError; onReady: () => void }) {
+  const cooldown = error.code === "DEMO_COOLDOWN";
+  const match = /(\d+) s/.exec(error.message);
+  const [left, setLeft] = useState(cooldown && match ? Number(match[1]) : 0);
+  useEffect(() => {
+    if (!cooldown) {
+      const t = window.setTimeout(onReady, 8000);
+      return () => {
+        window.clearTimeout(t);
+      };
+    }
+    if (left <= 0) {
+      onReady();
+      return undefined;
+    }
+    const t = window.setTimeout(() => {
+      setLeft((n) => n - 1);
+    }, 1000);
+    return () => {
+      window.clearTimeout(t);
+    };
+  }, [cooldown, left, onReady]);
+  return (
+    <div role="status" className="flex items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3 text-sm">
+      <Spinner size={16} label="Waiting" />
+      <p>
+        {cooldown ? (
+          <>
+            Thanks for trying HealWright. You can start the next demo in <strong>{left} s</strong>.
+          </>
+        ) : (
+          <>
+            <strong>Busy:</strong> another visitor&apos;s demo is running right now. Try again shortly; one demo runs at a time.
+          </>
+        )}
+      </p>
+    </div>
+  );
+}
+
 export function DemoPage() {
   useTitle("Live demo", "Break a page and watch HealWright heal a real Playwright test.");
   const scenarios = useResource<{ items: DevScenario[] }>("/scenarios");
@@ -63,6 +105,10 @@ export function DemoPage() {
   const timer = useRef<number | null>(null);
   const reduce = useReducedMotion();
   const toast = useToast();
+  const features = useFeatures();
+  const clearError = useCallback(() => {
+    setError(null);
+  }, []);
 
   useEffect(
     () => () => {
@@ -207,14 +253,20 @@ export function DemoPage() {
             <Button variant="secondary" onClick={openShop} disabled={!current || opening}>
               Open the broken shop
             </Button>
-            <Checkbox checked={watch} onChange={setWatch}>
-              Watch it happen (opens a browser window, slowed down)
-            </Checkbox>
+            {features?.watch ? (
+              <Checkbox checked={watch} onChange={setWatch}>
+                Watch it happen (opens a browser window, slowed down)
+              </Checkbox>
+            ) : null}
           </div>
         </section>
       ) : null}
 
-      {error ? <ErrorBanner error={error} onRetry={error.code === "DEMO_BUSY" ? undefined : start} /> : null}
+      {error && (error.code === "DEMO_BUSY" || error.code === "DEMO_COOLDOWN") ? (
+        <BusyNotice error={error} onReady={clearError} />
+      ) : error ? (
+        <ErrorBanner error={error} onRetry={start} />
+      ) : null}
 
       {run ? (
         <section

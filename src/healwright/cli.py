@@ -49,10 +49,13 @@ def _serve(host: str, port: int) -> int:
     from healwright.config import load_settings
 
     settings = load_settings()
-    if host not in LOCAL_HOSTS and settings.api_token is None:
+    # A non-local bind needs a token, unless public mode is on: then nothing that writes to
+    # the repository is reachable (no triage, no patch apply).
+    if host not in LOCAL_HOSTS and settings.api_token is None and not settings.public:
         sys.stderr.write(
             f"healwright: refusing to bind to {host}: set HEALWRIGHT_API_TOKEN first "
-            "(every /api request then needs Authorization: Bearer <token>)\n"
+            "(every /api request then needs Authorization: Bearer <token>), "
+            "or HEALWRIGHT_PUBLIC=1 for a read-only public demo\n"
         )
         return 2
 
@@ -62,7 +65,9 @@ def _serve(host: str, port: int) -> int:
     from healwright.logs import setup_logging
 
     setup_logging(settings.artifact_dir)
-    uvicorn.run(create_app(), host=host, port=port, log_level="info")
+    # Behind a proxy (Hugging Face) X-Forwarded-For carries the visitor's address; the
+    # cooldown keys on it (healwright.api.public.visitor_id).
+    uvicorn.run(create_app(), host=host, port=port, log_level="info", proxy_headers=True)
     return 0
 
 

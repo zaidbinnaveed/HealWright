@@ -718,3 +718,114 @@ def test_demo_shop_opens_a_broken_session(env: dict[str, Any]) -> None:
         err(c.post(f"{API}/demo/shop", json={"scenario_id": "eval-01-id-rename"}), 404, "NOT_FOUND")
     finally:
         env["demo"].close()
+
+
+# ------------------------------------------------------------------ public-safe mode
+
+
+class ShotDemo(FakeDemo):
+    """Writes a 'clean' screenshot into its work folder, like the real runner."""
+
+    def _steps(self, run: DemoRun) -> None:
+        folder = self.work_root / run.id / "shots-clean"
+        folder.mkdir(parents=True)
+        (folder / "end.png").write_bytes(b"\x89PNG fake")
+        run.shots["clean"] = folder / "end.png"
+        super()._steps(run)
+
+
+def public_client(env: dict[str, Any], shop_url: str | None = None) -> tuple[TestClient, FakeDemo]:
+    from healwright.api.public import PublicOptions
+
+    root: Path = env["paths"].artifact_root
+    demo = ShotDemo(root)
+    demo.cleanup = True
+    demo.shop_url = shop_url
+    opts = PublicOptions(public=True, cooldown_s=60, shop_url=shop_url)
+    return TestClient(create_app(env["paths"], demo, public=opts)), demo
+
+
+def test_public_features_and_read_only(env: dict[str, Any]) -> None:
+    c, _ = public_client(env)
+    assert c.get(f"{API}/features").json() == {
+        "public": True,
+        "triage": False,
+        "apply": False,
+        "watch": False,
+        "demo_cooldown_s": 60,
+    }
+    assert env["client"].get(f"{API}/features").json()["public"] is False
+    ev = env["ev_patch"]
+    err(
+        c.post(f"{API}/heal-events/{ev}/triage", json={"decision": "accepted"}),
+        403,
+        "PUBLIC_READ_ONLY",
+    )
+    res = c.post(f"{API}/heal-events/{ev}/patch/apply", headers={"Idempotency-Key": "k1"})
+    err(res, 403, "PUBLIC_READ_ONLY")
+    assert env["test_file"].read_bytes() == SOURCE.encode("utf-8")  # untouched
+    watch = c.post(f"{API}/demo/runs", json={"scenario_id": "dev-01-id-rename", "watch": True})
+    err(watch, 403, "WATCH_DISABLED")
+
+
+def test_public_cooldown_busy_and_cleanup(env: dict[str, Any]) -> None:
+    c, demo = public_client(env)
+    a = {"X-Forwarded-For": "203.0.113.1"}
+    demo.release.clear()
+    first = c.post(f"{API}/demo/runs", json={"scenario_id": "dev-01-id-rename"}, headers=a)
+    assert first.status_code == 202
+    other = {"X-Forwarded-For": "203.0.113.2"}
+    busy = c.post(f"{API}/demo/runs", json={"scenario_id": "dev-01-id-rename"}, headers=other)
+    err(busy, 409, "DEMO_BUSY")  # one demo at a time, for everyone
+    demo.release.set()
+    state = _wait(c, first.json()["id"])
+    assert state["stage"] == "done"
+    assert state["shots"] == ["clean"]
+    assert not (demo.work_root / first.json()["id"]).exists()  # temp files removed
+    shot = c.get(f"{API}/demo/runs/{first.json()['id']}/shots/clean")
+    assert shot.status_code == 200
+    assert shot.content == b"\x89PNG fake"
+    again = c.post(f"{API}/demo/runs", json={"scenario_id": "dev-01-id-rename"}, headers=a)
+    body = err(again, 429, "DEMO_COOLDOWN")
+    assert int(again.headers["Retry-After"]) > 0
+    assert body["details"]["retry_after_s"] == int(again.headers["Retry-After"])
+    ok = c.post(f"{API}/demo/runs", json={"scenario_id": "dev-01-id-rename"}, headers=other)
+    assert ok.status_code == 202  # another visitor may start once the demo is free
+    _wait(c, ok.json()["id"])
+
+
+def test_public_cors_allows_the_showcase_site(env: dict[str, Any]) -> None:
+    c, _ = public_client(env)
+    pre = c.options(
+        f"{API}/features",
+        headers={"Origin": "https://healwright.vercel.app", "Access-Control-Request-Method": "GET"},
+    )
+    assert pre.headers.get("access-control-allow-origin") == "https://healwright.vercel.app"
+    other = c.options(
+        f"{API}/features",
+        headers={"Origin": "https://evil.example", "Access-Control-Request-Method": "GET"},
+    )
+    assert "access-control-allow-origin" not in other.headers
+
+
+def test_public_shop_proxy(env: dict[str, Any], live_store: Any) -> None:
+    c, _ = public_client(env, shop_url=live_store.base_url)
+    url = c.post(f"{API}/demo/shop", json={"scenario_id": "dev-01-id-rename"}).json()["url"]
+    assert url.startswith("/shop/__chaos/enter?session=")
+    enter = c.get(url, follow_redirects=False)
+    assert enter.status_code == 303
+    assert enter.headers["location"] == "/shop/"
+    assert "set-cookie" in enter.headers
+    page = c.get("/shop/product/1")
+    assert page.status_code == 200
+    assert 'href="/shop/static/store.css"' in page.text
+    assert 'href="/shop/cart"' in page.text
+    assert 'id="add-to-cart"' not in page.text  # the scenario is applied: the id was renamed
+    js = c.get("/shop/static/store.js")
+    assert '"/shop/api/cart"' in js.text
+    added = c.post("/shop/api/cart", json={"product_id": 1, "qty": 1})
+    assert added.status_code == 200, added.text
+    session = url.split("session=")[1].split("&")[0]
+    assert [a["action_id"] for a in live_store.actions(session)] == ["add_to_cart"]
+    for blocked in ("/shop/__chaos/reset", "/shop/__chaos/actions", "/shop/__chaos/scenario"):
+        err(c.get(blocked), 404, "NOT_FOUND")

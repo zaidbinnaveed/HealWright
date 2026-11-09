@@ -1,5 +1,6 @@
 import { useId, useRef, useState } from "react";
 import { ApiError, postJson, SHOWCASE } from "../../api/client";
+import { useFeatures } from "../../lib/useFeatures";
 import type { HealEvent } from "../../api/types";
 import { TriageBadge } from "../StatusBadge";
 import { Button } from "../ui/Button";
@@ -27,7 +28,7 @@ const COPY: Record<Exclude<Pending, null>, { title: string; body: string; cta: s
   },
 };
 
-/** Hosted showcase: the review step is described, not offered (it edits files on disk). */
+/** Hosted showcase or public demo: the review step is described, not offered (it edits files). */
 function ShowcaseReview({ event }: { event: HealEvent }) {
   const triageable = event.decision.status === "healed" || event.decision.status === "suggested";
   return (
@@ -52,7 +53,9 @@ function ShowcaseReview({ event }: { event: HealEvent }) {
 }
 
 export function TriageActions({ event, onChange }: { event: HealEvent; onChange: () => void }) {
-  return SHOWCASE ? <ShowcaseReview event={event} /> : <LocalTriage event={event} onChange={onChange} />;
+  const features = useFeatures();
+  if (SHOWCASE || features?.public) return <ShowcaseReview event={event} />;
+  return <LocalTriage event={event} onChange={onChange} />;
 }
 
 function LocalTriage({ event, onChange }: { event: HealEvent; onChange: () => void }) {

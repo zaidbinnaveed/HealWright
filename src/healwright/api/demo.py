@@ -17,6 +17,7 @@ import contextlib
 import importlib
 import json
 import logging
+import shutil
 import threading
 import time
 from dataclasses import dataclass, field
@@ -27,7 +28,7 @@ import httpx
 from ulid import ULID
 
 from healwright.api.errors import ApiError
-from healwright.store.index import load_run, run_ids
+from healwright.store.index import load_run, run_ids, runs_dir
 
 log = logging.getLogger("healwright.api.demo")
 
@@ -52,6 +53,8 @@ class DemoRun:
     error: str | None = None
     watch: bool = False
     shots: dict[str, Path] = field(default_factory=dict)
+    # Public mode deletes the run's work folder; its screenshots are kept here instead.
+    shot_bytes: dict[str, bytes] = field(default_factory=dict, repr=False)
 
     def public(self) -> dict[str, Any]:
         return {
@@ -70,7 +73,7 @@ class DemoRun:
             "run_ids": self.run_ids,
             "error": self.error,
             "watch": self.watch,
-            "shots": sorted(self.shots),
+            "shots": sorted(set(self.shots) | set(self.shot_bytes)),
         }
 
 
@@ -104,9 +107,26 @@ def dev_scenarios() -> list[dict[str, Any]]:
 
 
 class DemoRunner:
-    def __init__(self, artifact_root: Path, work_root: Path) -> None:
+    def __init__(
+        self,
+        artifact_root: Path,
+        work_root: Path,
+        *,
+        shop_url: str | None = None,
+        cleanup: bool = False,
+        keep_runs: int = 40,
+        keep_demos: int = 50,
+    ) -> None:
+        """``shop_url``: use this (internal) store for "Open the broken shop" and return a
+        ``/shop/...`` link for the proxy. ``cleanup`` (public mode): after each demo, delete
+        its work folder (screenshots move to memory), keep only the newest ``keep_runs`` run
+        folders in the artifact store and the newest ``keep_demos`` demo records."""
         self.artifact_root = artifact_root
         self.work_root = work_root
+        self.shop_url = shop_url.rstrip("/") if shop_url else None
+        self.cleanup = cleanup
+        self.keep_runs = keep_runs
+        self.keep_demos = keep_demos
         self._lock = threading.Lock()
         self._runs: dict[str, DemoRun] = {}
         self._active: str | None = None
@@ -147,6 +167,15 @@ class DemoRunner:
         if scenario_id not in known:
             raise ApiError(404, "NOT_FOUND", f"no dev scenario {scenario_id}")
         scenario = _mod("chaos_store.scenario").load_scenario(scenario_id, _dev_dir())
+        if self.shop_url is not None:
+            session = _mod("chaos_store.state").new_session_id()
+            httpx.post(
+                f"{self.shop_url}/__chaos/scenario",
+                params={"session": session},
+                content=scenario.model_dump_json(by_alias=True, exclude_none=True),
+                timeout=10,
+            ).raise_for_status()
+            return f"/shop/__chaos/enter?session={session}&next=/"
         with self._lock:
             if self._shop_url is None:
                 serve = _mod("chaos_store.serve").serve_in_thread
@@ -168,15 +197,38 @@ class DemoRunner:
         return self._store_url
 
     def _execute(self, run: DemoRun) -> None:
+        final: Stage = "error"
         try:
             self._steps(run)
-            run.stage = "done"
+            final = "done"
         except Exception as exc:
             log.exception("demo run %s failed", run.id)
             run.error = f"{type(exc).__name__}: {str(exc)[:300]}"
-            run.stage = "error"
         finally:
+            # Clean up BEFORE the run reads as finished: a client polling for "done" must
+            # never race the clean-up (and the next demo may start right after "done").
+            if self.cleanup:
+                self._clean_up(run)
             run.finished_at = time.time()
+            run.stage = final
+
+    def _clean_up(self, run: DemoRun) -> None:
+        """Public mode: keep the container's disk bounded. Never raises."""
+        try:
+            for name, path in list(run.shots.items()):
+                if path.is_file():
+                    run.shot_bytes[name] = path.read_bytes()
+            run.shots.clear()
+            shutil.rmtree(self.work_root / run.id, ignore_errors=True)
+            ids = sorted(run_ids(self.artifact_root))
+            for old in ids[: max(0, len(ids) - self.keep_runs)]:
+                shutil.rmtree(runs_dir(self.artifact_root) / old, ignore_errors=True)
+            with self._lock:
+                done = [r for r in self._runs if r != self._active]
+                for old_id in done[: max(0, len(done) - self.keep_demos)]:
+                    del self._runs[old_id]
+        except Exception:
+            log.exception("demo clean-up failed for %s", run.id)
 
     def _steps(self, run: DemoRun) -> None:
         bench = _mod("benchmark.run")

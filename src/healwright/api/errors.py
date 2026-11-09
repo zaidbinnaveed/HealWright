@@ -56,13 +56,19 @@ HTTP_CODES = {
 
 class ApiError(Exception):
     def __init__(
-        self, status: int, code: str, message: str, details: dict[str, Any] | None = None
+        self,
+        status: int,
+        code: str,
+        message: str,
+        details: dict[str, Any] | None = None,
+        headers: dict[str, str] | None = None,
     ) -> None:
         super().__init__(message)
         self.status = status
         self.code = code
         self.message = message
         self.details = details
+        self.headers = headers
 
 
 def request_id(request: Request) -> str:
@@ -152,7 +158,9 @@ def _too_large(request: Request) -> JSONResponse:
 def install(app: FastAPI, api_token: str | None = None) -> None:
     @app.exception_handler(ApiError)
     async def _api_error(request: Request, exc: ApiError) -> JSONResponse:
-        return envelope(request, exc.status, exc.code, exc.message, exc.details)
+        return envelope(
+            request, exc.status, exc.code, exc.message, exc.details, headers=exc.headers
+        )
 
     @app.exception_handler(StarletteHTTPException)
     async def _http_error(request: Request, exc: StarletteHTTPException) -> JSONResponse:

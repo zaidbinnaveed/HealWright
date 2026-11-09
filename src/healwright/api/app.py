@@ -19,7 +19,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Annotated, Any, Literal
 
-from fastapi import APIRouter, FastAPI, Header, Query
+from fastapi import APIRouter, FastAPI, Header, Query, Request
 from fastapi import Path as PathParam
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse, Response
@@ -29,6 +29,7 @@ from pydantic import BaseModel, ConfigDict, StringConstraints
 import healwright
 from healwright.api.demo import DemoRunner, dev_scenarios
 from healwright.api.errors import ApiError, install
+from healwright.api.public import Cooldown, PublicOptions, read_only, shop_router, visitor_id
 from healwright.apply import apply_event, diff_target, sha256_file
 from healwright.models import HealEvent
 from healwright.patcher import git_apply_check
@@ -241,6 +242,7 @@ def create_app(
     paths: Paths | None = None,
     demo: DemoRunner | None = None,
     api_token: str | None = None,
+    public: PublicOptions | None = None,
 ) -> FastAPI:
     if paths is None:
         from healwright.config import load_settings
@@ -248,6 +250,13 @@ def create_app(
         settings = load_settings()
         if api_token is None and settings.api_token is not None:
             api_token = settings.api_token.get_secret_value()
+        if public is None:
+            public = PublicOptions(
+                public=settings.public,
+                cooldown_s=settings.demo_cooldown_s,
+                shop_url=settings.shop_url,
+                cors_origins=settings.cors_origins,
+            )
         repo = Path.cwd()
         paths = Paths(
             repo_root=repo,
@@ -261,7 +270,10 @@ def create_app(
     # (pytest does), so add the repo root explicitly.
     if str(paths.repo_root) not in sys.path:
         sys.path.insert(0, str(paths.repo_root))
-    runner = demo or DemoRunner(paths.artifact_root, paths.demo_work)
+    opts = public or PublicOptions()
+    runner = demo or DemoRunner(
+        paths.artifact_root, paths.demo_work, shop_url=opts.shop_url, cleanup=opts.public
+    )
 
     @asynccontextmanager
     async def lifespan(_: FastAPI) -> AsyncIterator[None]:
@@ -280,19 +292,34 @@ def create_app(
     app.state.demo = runner
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=VITE_ORIGINS,
+        allow_origins=[*VITE_ORIGINS, *opts.origins()],
         allow_methods=["GET", "POST"],
         allow_headers=["Authorization", "Content-Type", "Idempotency-Key", "X-Request-ID"],
         expose_headers=["X-Request-ID"],
     )
     install(app, api_token)
-    app.include_router(router(paths, runner), prefix=API)
+    app.include_router(router(paths, runner, opts), prefix=API)
+    if opts.shop_url:
+        app.include_router(shop_router(opts.shop_url))
     mount_frontend(app, paths.frontend_dist)
     return app
 
 
-def router(paths: Paths, runner: DemoRunner) -> APIRouter:
+def router(paths: Paths, runner: DemoRunner, opts: PublicOptions | None = None) -> APIRouter:
     r = APIRouter()
+    opts = opts or PublicOptions()
+    cooldown = Cooldown(opts.cooldown_s)
+
+    @r.get("/features")
+    def features() -> dict[str, Any]:
+        """What this deployment offers; the web app hides the rest."""
+        return {
+            "public": opts.public,
+            "triage": not opts.public,
+            "apply": not opts.public,
+            "watch": not opts.public,
+            "demo_cooldown_s": opts.cooldown_s if opts.public else 0,
+        }
 
     def get_event(event_id: str) -> tuple[RunInfo, HealEvent]:
         found = find_event(paths.artifact_root, event_id)
@@ -402,6 +429,8 @@ def router(paths: Paths, runner: DemoRunner) -> APIRouter:
 
     @r.post("/heal-events/{event_id}/triage")
     def triage(event_id: Ulid, body: TriageBody) -> dict[str, Any]:
+        if opts.public:
+            raise read_only()
         info, event = get_event(event_id)
         store = TriageStore(info.dir)
         record = store.get(event_id)
@@ -424,6 +453,8 @@ def router(paths: Paths, runner: DemoRunner) -> APIRouter:
             str | None, Header(alias="Idempotency-Key", min_length=1, max_length=200)
         ] = None,
     ) -> dict[str, Any]:
+        if opts.public:
+            raise read_only()
         if not idempotency_key:
             raise ApiError(
                 422,
@@ -497,16 +528,31 @@ def router(paths: Paths, runner: DemoRunner) -> APIRouter:
         return {"items": dev_scenarios()}
 
     @r.post("/demo/runs", status_code=202)
-    def demo_start(body: DemoBody) -> dict[str, Any]:
-        return runner.start(body.scenario_id, watch=body.watch).public()
+    def demo_start(body: DemoBody, request: Request) -> dict[str, Any]:
+        if not opts.public:
+            return runner.start(body.scenario_id, watch=body.watch).public()
+        if body.watch:
+            raise ApiError(
+                403,
+                "WATCH_DISABLED",
+                "Watch mode needs a local screen; it is off on the public demo.",
+            )
+        visitor = visitor_id(request)
+        cooldown.check(visitor)
+        started = runner.start(body.scenario_id).public()
+        cooldown.mark(visitor)
+        return started
 
     @r.post("/demo/shop")
     def demo_shop(body: ShopBody) -> dict[str, str]:
         return {"url": runner.open_shop(body.scenario_id)}
 
     @r.get("/demo/runs/{demo_id}/shots/{name}")
-    def demo_shot(demo_id: Ulid, name: Literal["clean", "healed"]) -> FileResponse:
-        shot = runner.get(demo_id).shots.get(name)
+    def demo_shot(demo_id: Ulid, name: Literal["clean", "healed"]) -> Response:
+        run = runner.get(demo_id)
+        if name in run.shot_bytes:
+            return Response(run.shot_bytes[name], media_type="image/png")
+        shot = run.shots.get(name)
         if shot is None or not shot.is_file():
             raise ApiError(404, "NOT_FOUND", f"no {name} screenshot for demo run {demo_id}")
         return FileResponse(shot, media_type="image/png")

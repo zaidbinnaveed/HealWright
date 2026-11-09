@@ -63,6 +63,24 @@ cd frontend && npx vercel deploy --prebuilt --prod && cd ..       # needs `npx v
 uv run python scripts/smoke_site.py https://healwright.vercel.app # routes, themes, console, favicon, video
 ```
 
+### Hosted backend (Hugging Face Space, Docker)
+
+The `Dockerfile` builds the full app for a free CPU Space: fonts are downloaded during the build (`scripts/fetch_fonts.py`), the normal web app is built, and the runtime is the official Playwright Python image for the locked Playwright version. `scripts/space_start.sh` starts the Chaos Store on `127.0.0.1:8001` and the app on `0.0.0.0:7860` in **public-safe mode** (`HEALWRIGHT_PUBLIC=1`):
+
+- demo runs use VLM replay only (recorded replies, no keys); one demo at a time (`DEMO_BUSY`) and a 60 s cooldown per visitor (`DEMO_COOLDOWN`, `HEALWRIGHT_DEMO_COOLDOWN_S`);
+- Accept, Reject, Apply patch and "Watch it happen" are off (`GET /api/v1/features` tells the web app);
+- "Open the broken shop" goes through `/shop` (the app proxies the internal store and keeps its links under `/shop`);
+- each demo's temp files are removed after the run; only the newest 40 runs are kept;
+- CORS allows `https://healwright.vercel.app` (`HEALWRIGHT_CORS_ORIGINS`).
+
+Try public mode locally without Docker:
+
+```bash
+CHAOS_CONTROL=1 uv run uvicorn chaos_store.app:create_app --factory --host 127.0.0.1 --port 8001 &
+HEALWRIGHT_PUBLIC=1 HEALWRIGHT_SHOP_URL=http://127.0.0.1:8001 uv run healwright serve --port 7860
+uv run python scripts/smoke_space.py http://127.0.0.1:7860   # pages, broken shop, 3 demo verdicts
+```
+
 `make_vercel_output.py` replaces `vercel build`, whose builder needs symlinks that Windows refuses without Developer Mode. Scan `frontend/.vercel/output` for keys and local paths before every deploy.
 
 ## 5. Tests
